@@ -14,7 +14,7 @@ Tested on Ubuntu, with Nvidia & AMD Graphics Miners.
 <pre>
 apt update
 apt dist-upgrade
-apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip git php7.0 php7.0-cgi
+apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip php7.0 php7.0-cgi
 
 </pre>
 
