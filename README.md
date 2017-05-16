@@ -1,5 +1,5 @@
 # <a href="https://minerstat.com" target="_blank">minerstat.com</a> - Linux Client
-Tested on Ubuntu, with Nvidia & AMD Graphics Miners.
+Tested on Ubuntu, with Nvidia & AMD GPU's..
 
 <b>Features:</b>
 - Coin Algorithm
