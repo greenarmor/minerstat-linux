@@ -16,7 +16,6 @@ apt update
 apt dist-upgrade
 apt install unzip php7.0 php7.0-cgi git
 apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev
-
 </pre>
 
 # Install Graphics Drivers
