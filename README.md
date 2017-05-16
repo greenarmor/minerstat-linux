@@ -1,4 +1,4 @@
-# minerstat.com - Linux Client
+# <a href="https://minerstat.com" target="_blank">minerstat.com</a> - Linux Client
 Nvidia & AMD
 
 <b>Features:</b>
@@ -14,10 +14,11 @@ Enter this lines on linux terminal..
 <pre>
 apt update
 apt dist-upgrade
-apt install ocl-icd-opencl-dev nodejs-legacy libcurl3:i386 libcurl4-openssl-dev unzip git
+apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip git
 </pre>
 
 # Download
+the node to your home folder..
 <pre>
 git clone https://github.com/coinscrow/minerstat-linux
 </pre>
@@ -42,8 +43,10 @@ global.client = "<b>claymore-eth</b>";
 </pre>
 
 # Start the client
+on it's folder..
 <pre>
 node start
 </pre>
 
--- @coinscrow -- in 2017 ---
+
+-- minerstat.com --- in 2017 --- @coinscrow ---
