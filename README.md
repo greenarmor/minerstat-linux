@@ -6,7 +6,7 @@ Nvidia & AMD
 - Dual-Mining Algorithm
 - Send miner log file to the server
 - Send miner data to the server (GPU, HASHRATE, etc..)
-- Remote commands (Restart miner, Reboot PC, Switch miner)
+- Remote commands (Restart miner, Reboot PC, Change miner)
 - Watchdog 
 
 # Before you start..
