@@ -7,6 +7,7 @@ Nvidia & AMD
 - Send miner log file to the server
 - Send miner data to the server (GPU, HASHRATE, etc..)
 - Remote commands (Restart miner, Reboot PC, Switch miner)
+- Watchdog 
 
 # Before you start..
 Enter this lines on linux terminal..
@@ -45,3 +46,4 @@ global.client = "<b>claymore-eth</b>";
 node start
 </pre>
 
+-- @coinscrow -- in 2017 ---
