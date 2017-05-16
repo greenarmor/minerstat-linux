@@ -62,11 +62,21 @@ global.path = "/home/<b>USER</b>/minerstat-linux"; // Full path where you cloned
 // claymore-eth ALGO & DUAL-MINING ALGO: algo
 </pre>
 
-# Start the client..
-..on it's folder
+# Permissions
+Navigate your terminal to minerstat-linux folder. Example:
 <pre>
-node start
+cd /home/user/minerstat-linux
+chmod -R 777 *
 </pre>
+
+# Start the client..
+..on it's folder  (In this case: /home/user/minerstat-linux )
+<pre>
+sudo node start
+</pre>
+
+Ctrl + C on the terminal close the Application.  <br>
+
 
 <a href="https://bitcointalk.org/index.php?topic=1772780.0" target="_blank">BitcoinTalk Topic</a>
 
