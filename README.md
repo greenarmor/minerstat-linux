@@ -9,6 +9,11 @@ Tested on Ubuntu, with Nvidia & AMD Graphics Miners.
 - Remote commands (Restart miner, Reboot PC, Change miner)
 - Watchdog 
 
+<b>Supported miners:</b>
+- Claymore-Dual (ETH, ETC, EXP, MUSIC, UBQ..)
+- Claymore-ZEC
+- Ewbf-ZEC
+
 # Before you start..
 ..enter this lines on linux terminal..
 <pre>
@@ -42,7 +47,7 @@ git clone https://github.com/coinscrow/minerstat-linux
 </pre>
 
 # Edit Config File
-Press Ctrl + O, to save changes, After Ctrl + X to Exit from the editor.
+Press "Ctrl + O", to save changes, After "Ctrl + X" to close the editor.
 <pre>
 nano config.js
 </pre>
@@ -75,7 +80,7 @@ chmod -R 777 *
 sudo node start
 </pre>
 
-Ctrl + C on the terminal close the Application.  <br>
+Press "Ctrl + C" on the terminal, to close the Application.  <br>
 
 
 <a href="https://bitcointalk.org/index.php?topic=1772780.0" target="_blank">BitcoinTalk Topic</a>
