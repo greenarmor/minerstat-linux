@@ -10,26 +10,27 @@ Nvidia & AMD
 - Watchdog 
 
 # Before you start..
-Enter this lines on linux terminal..
+..enter this lines on linux terminal..
 <pre>
 apt update
 apt dist-upgrade
 apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip git
 </pre>
 
-# Download
-the node to your home folder..
+# Download..
+..the node to your home folder..
 <pre>
 git clone https://github.com/coinscrow/minerstat-linux
 </pre>
 
-# Edit Config
+# Edit Config File
+Press Ctrl + O, to save changes, After Ctrl + X to Exit from the editor.
 <pre>
 nano config.js
 </pre>
 
 <pre>
-// EDIT THIS LINES BELOW TO CONFIGURE YOUR WORKER
+// EDIT THESE LINES BELOW TO CONFIGURE YOUR WORKER
 
 global.accesskey = "<b>YOURMINERSTATLOGINKEYHERE</b>"; // minerstat.com LOGIN key
 global.worker = "<b>YOURRIGNAMEHERE</b>"; // your created worker at the website
@@ -42,12 +43,13 @@ global.client = "<b>claymore-eth</b>";
 // claymore-eth ALGO & DUAL-MINING ALGO: algo
 </pre>
 
-# Start the client
-on it's folder..
+# Start the client..
+..on it's folder
 <pre>
 node start
 </pre>
 
+<a href="https://bitcointalk.org/index.php?topic=1772780.0" target="_blank">BitcoinTalk Topic</a>
 
 <br>
-<center>--------------------------------- © 2017 minerstat.com -------------------------------------</center>
+<center>-------------------------------------- © 2017 minerstat.com -----------------------------------------------</center>
