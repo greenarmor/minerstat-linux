@@ -17,8 +17,25 @@ apt dist-upgrade
 apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip git
 </pre>
 
+# Install Graphics Drivers
+
+<b>AMD</b> <br>
+http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx
+<pre>
+tar -Jxvf amdgpu-pro-17.10-414273.tar.xz
+cd amdgpu-pro-17.10-414273
+./amdgpu-pro-install -y --allow-unauthenticated
+</pre>
+
+<b>NVIDIA</b> <br>
+http://www.nvidia.com/download/driverResults.aspx/118290/en-us
+<pre>
+chmod +x NVIDIA-Linux-x86_64-375.66.run
+./NVIDIA-Linux-x86_64-375.66.run
+</pre>
+
 # Download..
-..the node to your home folder..
+..the client to your home folder
 <pre>
 git clone https://github.com/coinscrow/minerstat-linux
 </pre>
@@ -52,4 +69,4 @@ node start
 <a href="https://bitcointalk.org/index.php?topic=1772780.0" target="_blank">BitcoinTalk Topic</a>
 
 <br>
-<center>-------------------------------------- © 2017 minerstat.com -----------------------------------------------</center>
+--------------------------------------------- © 2017 minerstat.com ---------------------------------------------------------
