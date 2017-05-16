@@ -14,7 +14,8 @@ Tested on Ubuntu, with Nvidia & AMD Graphics Miners.
 <pre>
 apt update
 apt dist-upgrade
-apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip git
+apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev unzip git php7.0 php7.0-cgi
+
 </pre>
 
 # Install Graphics Drivers
@@ -52,6 +53,7 @@ nano config.js
 global.accesskey = "<b>YOURMINERSTATLOGINKEYHERE</b>"; // minerstat.com LOGIN key
 global.worker = "<b>YOURRIGNAMEHERE</b>"; // your created worker at the website
 global.client = "<b>claymore-eth</b>";
+global.path = "/home/<b>USER</b>/minerstat-linux"; // Full path where you cloned the client
 
 // global.client EXAMPLES:
 // NVIDIA: ewbf-zec
