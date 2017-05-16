@@ -13,6 +13,7 @@ Tested on Ubuntu, with Nvidia & AMD GPU's..
 - Claymore-Dual (ETH, ETC, EXP, MUSIC, UBQ..)
 - Claymore-ZEC
 - Ewbf-ZEC
+- Sgminer-GM
 
 # Before you start..
 ..enter this lines on linux terminal..
@@ -26,10 +27,10 @@ apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev
 # Install Graphics Drivers
 
 <b>AMD</b> <br>
-http://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx
+http://support.amd.com/en-us/kb-articles/Pages/AMD-Radeon-GPU-PRO-Linux-Beta-Driver–Release-Notes.aspx
 <pre>
-tar -Jxvf amdgpu-pro-17.10-414273.tar.xz
-cd amdgpu-pro-17.10-414273
+tar -Jxvf amdgpu-pro-16.40-348864.tar.xz
+cd amdgpu-pro-16.40-348864
 ./amdgpu-pro-install -y --allow-unauthenticated
 </pre>
 
