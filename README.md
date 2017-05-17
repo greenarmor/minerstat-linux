@@ -77,7 +77,7 @@ Navigate your terminal to minerstat-linux folder. Example:
 <pre>
 cd /home/user/minerstat-linux
 chmod -R 777 *
-npm install colors sleep pump request express sphp
+npm install colors sleep pump request express sphp fs
 </pre>
 
 After the npm command you will get an error, but it's normal. The Setup is ready!
