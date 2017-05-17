@@ -76,6 +76,8 @@ chmod -R 777 *
 npm install colors sleep pump request express sphp
 </pre>
 
+After the npm command you will get an error, but it's normal. The Setup is ready!
+
 # Start the client..
 ..on it's folder  (In this case: /home/user/minerstat-linux )
 <pre>
