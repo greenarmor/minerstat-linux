@@ -9,6 +9,10 @@ Tested on Ubuntu, with Nvidia & AMD GPU's..
 - Remote commands (Restart miner, Reboot PC, Change miner)
 - Watchdog 
 
+<b>In Progress:</b>
+- New clients
+- Hardware Monitor (Like windows client, GPU Temp, Fans..)
+
 <b>Supported miners:</b>
 - Claymore-Dual (ETH, ETC, EXP, MUSIC, UBQ..)
 - Claymore-ZEC
