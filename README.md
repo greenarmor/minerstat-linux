@@ -75,7 +75,7 @@ global.path = "/home/<b>USER</b>/minerstat-linux"; // Full path where you cloned
 # Permissions
 Navigate your terminal to minerstat-linux folder. Example:
 <pre>
-cd /home/user/minerstat-linux
+cd /home/<b>user</b>/minerstat-linux
 chmod -R 777 *
 npm install colors sleep pump request express sphp fs
 </pre>
