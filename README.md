@@ -20,7 +20,7 @@ Tested on Ubuntu, with Nvidia & AMD GPU's..
 <pre>
 apt update
 apt dist-upgrade
-apt install unzip php7.0 php7.0-cgi git
+apt install unzip php7.0 php7.0-cgi git npm
 apt install nodejs-legacy ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev
 </pre>
 
@@ -73,6 +73,7 @@ Navigate your terminal to minerstat-linux folder. Example:
 <pre>
 cd /home/user/minerstat-linux
 chmod -R 777 *
+npm install colors sleep pump request express sphp
 </pre>
 
 # Start the client..
