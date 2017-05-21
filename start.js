@@ -269,6 +269,7 @@ console.log(colors.green(getDateTime() + " Package Sent"));
 // ALGO CHECK
 
 if (global.algo === "yes") {
+
 var request = require('request');
 request('http://minerstat.com/bestquerytext.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
 
@@ -279,7 +280,6 @@ console.log(colors.yellow(getDateTime() + " " + body));
 }
 
 });
-}
 
 
 var request = require('request');
@@ -341,6 +341,8 @@ console.log(colors.green('SITE: Dual-Mining Algo Enabled!'));
 
 });
 
+
+}
 
 
 // GET REMOTE COMMANDS
