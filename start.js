@@ -56,7 +56,7 @@ header();
 
 function algoinfo() {
 var request = require("request");
-request('http://minerstat.com/bestquery.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
+request('https://minerstat.com/bestquery.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
 
 global.algoresponse = body;
 global.algoresponseold = body;
@@ -65,7 +65,7 @@ global.algoresponseold = body;
 });
 
 var request = require('request');
-request('http://minerstat.com/dualresponse.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
+request('https://minerstat.com/dualresponse.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
 
 global.dualresponse = body;
 global.dualresponserold = body;
@@ -97,7 +97,7 @@ if(global.client === "algo") { global.algo = "yes"; global.client = "claymore-et
 //PACKAGE REQUEST ON START
 var request = require('request');
 request.post({
-  url:     'http://minerstat.com/control.php?worker='+ global.accesskey +'.' + global.worker + '&miner=' + global.client + '&os=linux',
+  url:     'https://minerstat.com/control.php?worker='+ global.accesskey +'.' + global.worker + '&miner=' + global.client + '&os=linux',
   form:    { mes: global.res_data }
 }, function(error, response, body){
  console.log(colors.cyan(getDateTime() + " Waiting for the first sync.. (120 sec)")); 
@@ -125,7 +125,7 @@ if(global.client.indexOf("ewbf") > -1) { global.file = "clients/"+ global.client
 if(global.client.indexOf("claymore") > -1) { global.file = "clients/"+ global.client + "/config.txt"; }
 if(global.client.indexOf("sgminer") > -1) { global.file = "clients/"+ global.client + "/sgminer.conf"; }
 
-var request = http.get("http://minerstat.com/getresponse.php?action=config&token="+ global.accesskey +"&worker="+ global.worker +"&db=" + global.db + "&coin=" + global.coin + "&algo=" + global.algo, function(response) {
+var request = http.get("https://minerstat.com/getresponse.php?action=config&token="+ global.accesskey +"&worker="+ global.worker +"&db=" + global.db + "&coin=" + global.coin + "&algo=" + global.algo, function(response) {
  
    response.setEncoding('utf8');
   response.on('data', function(chunk){
@@ -257,7 +257,7 @@ if(numsync >= 1) {
 
 var request = require('request');
 request.post({
-url: 'http://minerstat.com/getstat.php?token='+ global.accesskey +'&worker='+ global.worker, form: { mes: res_data }
+url: 'https://minerstat.com/getstat.php?token='+ global.accesskey +'&worker='+ global.worker, form: { mes: res_data }
 }, function(error, response, body){
 console.log(colors.green(getDateTime() + " Package Sent")); 
 }); } }
@@ -271,7 +271,7 @@ console.log(colors.green(getDateTime() + " Package Sent"));
 if (global.algo === "yes") {
 
 var request = require('request');
-request('http://minerstat.com/bestquerytext.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
+request('https://minerstat.com/bestquerytext.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
 
 if(numsync > 1) {
 
@@ -283,7 +283,7 @@ console.log(colors.yellow(getDateTime() + " " + body));
 
 
 var request = require('request');
-request('http://minerstat.com/bestquery.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
+request('https://minerstat.com/bestquery.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
 
 global.algoresponser = body;
 
@@ -298,7 +298,7 @@ console.log(colors.cyan('ALGO: New Most Profitable Coin ! .. '));
 });
 
 var request = require('request');
-request('http://minerstat.com/dualresponse.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
+request('https://minerstat.com/dualresponse.php?token='+ global.accesskey +'&worker=' + global.worker, function(error, response, body) {
 
 global.dualresponser = body;
 
@@ -347,7 +347,7 @@ console.log(colors.green('SITE: Dual-Mining Algo Enabled!'));
 
 // GET REMOTE COMMANDS
 var request = require("request");
-request('http://minerstat.com/control.php?worker='+ global.accesskey +'.' + global.worker + '&miner=' + global.client + '&os=linux', function(error, response, body) {
+request('https://minerstat.com/control.php?worker='+ global.accesskey +'.' + global.worker + '&miner=' + global.client + '&os=linux', function(error, response, body) {
 
 if(body.indexOf("REBOOT") > -1) {
 killall();
