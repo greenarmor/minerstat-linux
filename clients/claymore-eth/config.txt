@@ -1,0 +1,12 @@
+
+-eworker testpc
+-epool eu1.ethermine.org:4444
+-ewal 0xA204eF1E3E192C78F12f1fFac60F29317C07B495
+-epsw x
+-dpool dcr.suprnova.cc:3252
+-dcoin dcr
+-dwal coinscrow.1
+-dpsw x
+-mode 1
+-dcri 4
+

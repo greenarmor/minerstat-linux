@@ -1,0 +1,290 @@
+06:44:33:368	e586bbc0	Check and remove old log files...
+06:44:33:368	e586bbc0	args: -eworker testpc -epool eu1.ethermine.org:4444 -ewal 0xA204eF1E3E192C78F12f1fFac60F29317C07B495 -epsw x -dpool dcr.suprnova.cc:3252 -dcoin dcr -dwal coinscrow.1 -dpsw x -mode 0 -dcri 4 
+06:44:33:368	e586bbc0	
+06:44:33:369	e586bbc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+06:44:33:369	e586bbc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.2      บ
+06:44:33:369	e586bbc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+06:44:33:369	e586bbc0	
+06:44:33:569	e586bbc0	ETH: 1 pool is specified
+06:44:33:569	e586bbc0	Main Ethereum pool is eu1.ethermine.org:4444
+06:44:33:569	e586bbc0	DCR: 1 pool is specified
+06:44:33:569	e586bbc0	Main Decred pool is dcr.suprnova.cc:3252
+06:44:33:863	e586bbc0	OpenCL platform: NVIDIA CUDA
+06:44:33:863	e586bbc0	AMD OpenCL platform not found 
+06:44:33:879	e586bbc0	CUDA initializing...
+
+06:44:33:879	e586bbc0	NVIDIA Cards available: 1 
+06:44:33:879	e586bbc0	CUDA Driver Version/Runtime Version: 9.1/8.0
+06:44:33:880	e586bbc0	GPU #0: GeForce GTX 1060 6GB, 6071 MB available, 10 compute units, capability: 6.1
+
+06:44:33:880	e586bbc0	Total cards: 1 
+06:44:37:881	e586bbc0	No AMD cards in the list, ADL library will not be used.
+06:44:37:885	e586bbc0	NVML version: 9.387.22
+06:44:38:047	b97fe700	ETH: Stratum - connecting to 'eu1.ethermine.org' <188.165.226.213> port 4444
+06:44:38:080	e586bbc0	DUAL MINING MODE ENABLED: ETHEREUM+DECRED
+06:44:38:080	e586bbc0	ETH: eth-proxy stratum mode
+06:44:38:080	e586bbc0	Watchdog enabled
+06:44:38:080	e586bbc0	Remote management (READ-ONLY MODE) is enabled on port 3333
+06:44:38:080	e586bbc0	
+06:44:38:106	b97fe700	send: {"worker": "testpc", "jsonrpc": "2.0", "params": ["0xA204eF1E3E192C78F12f1fFac60F29317C07B495", "x"], "id": 2, "method": "eth_submitLogin"}
+
+06:44:38:107	b97fe700	ETH: Stratum - Connected (eu1.ethermine.org:4444)
+06:44:38:136	b8df6700	 DCR: Stratum - connecting to 'dcr.suprnova.cc' <217.182.138.167> port 3252
+06:44:38:177	b97fe700	got 39 bytes
+06:44:38:177	b97fe700	buf: {"id":2,"jsonrpc":"2.0","result":true}
+
+06:44:38:177	b97fe700	parse packet: 38
+06:44:38:178	b97fe700	ETH: Authorized
+06:44:38:178	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:44:38:178	b97fe700	new buf size: 0
+06:44:38:190	b8df6700	send: {"id": 1, "method": "mining.subscribe", "params": ["dual 1.0"]}
+
+06:44:38:190	b8df6700	send: {"id": 5, "method": "mining.extranonce.subscribe", "params": []}
+
+06:44:38:190	b8df6700	send: {"id": 2, "method": "mining.authorize", "params": ["coinscrow.1","x"]}
+
+06:44:38:190	b8df6700	 DCR: Stratum - Connected (dcr.suprnova.cc:3252)
+06:44:38:248	b97fe700	got 248 bytes
+06:44:38:248	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x6f80573a59dff5660258ce9f054dbb41eeddfdfefbe8cd68a6466bdb77c48a63","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x476758"]}
+
+06:44:38:248	b97fe700	parse packet: 247
+06:44:38:249	b97fe700	ETH: job changed
+06:44:38:249	b97fe700	new buf size: 0
+06:44:38:271	b8df6700	got 118 bytes
+06:44:38:271	b8df6700	buf: {"id":1,"result":[[["mining.notify","deadbeefcafebabed209090000000000"]],"f4b498cda07a144b5f56a6d8",12],"error":null}
+
+06:44:38:271	b8df6700	parse packet: 117
+06:44:38:271	b8df6700	new buf size: 0
+06:44:38:281	b8df6700	got 460 bytes
+06:44:38:281	b8df6700	buf: {"id":null,"method":"mining.set_difficulty","params":[32]}
+{"id":null,"method":"mining.notify","params":["75ea","58de17307b9930a2e4bd525d1e454b01275d1a4fcfeb3a130000008100000000","51fb0e61bf3e50694bf52bc42992fecf7b0d3cb4dc7cf4bcace9e3504805b475f1e75e386042e734f1c45679cd9904b563b8d9ee8267e1b7224629c26a06f3c501007d8c03b13e4f05000c000a9d00003bab001ac3b02cf301000000edee02006f2b00008586265a0000000000000000","05000000",[],"05000000","1a00ab3b","5a268685",true]}
+
+06:44:38:282	b8df6700	parse packet: 58
+06:44:38:282	b8df6700	remove first packet 401
+06:44:38:282	b8df6700	new buf size: 401
+06:44:38:282	b8df6700	parse packet: 400
+06:44:38:282	b8df6700	new buf size: 0
+06:44:38:284	b9fff700	Setting DAG epoch #155...
+06:44:38:333	b8df6700	got 36 bytes
+06:44:38:333	b8df6700	buf: {"id":2,"result":true,"error":null}
+
+06:44:38:333	b8df6700	parse packet: 35
+06:44:38:333	b8df6700	 DCR: Authorized
+06:44:38:333	b8df6700	new buf size: 0
+06:44:40:174	b8df6700	got 401 bytes
+06:44:40:174	b8df6700	buf: {"id":null,"method":"mining.notify","params":["75eb","58de17307b9930a2e4bd525d1e454b01275d1a4fcfeb3a130000008100000000","00ae3b27d9b5691ed8573e35092121a8eae31b03cda08ad8d98cebec550dbc54bed4cfda34f3f6c97a00ac9796a8de7021187d218b92ac7a35a537b07efc3ab801007d8c03b13e4f05000c000a9d00003bab001ac3b02cf301000000edee0200d82d0000a886265a0000000000000000","05000000",[],"05000000","1a00ab3b","5a2686a8",true]}
+
+06:44:40:174	b8df6700	parse packet: 400
+06:44:40:174	b8df6700	new buf size: 0
+06:44:40:174	b8df6700	 DCR: 12/05/17-06:44:40 - New job from dcr.suprnova.cc:3252
+06:44:40:174	b8df6700	target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:44:40:702	b9fff700	Setting DAG epoch #155 for GPU0
+06:44:40:702	b9fff700	Create GPU buffer for GPU0
+06:44:42:246	b97fe700	got 248 bytes
+06:44:42:247	b97fe700	buf: {"id":0,"jsonrpc":"2.0","result":["0x4e9c2ab615445c1c5917bcfb493d7d047206a0de1b5086c50f630ac86e65677a","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x476759"]}
+
+06:44:42:247	b97fe700	parse packet: 247
+06:44:42:248	b97fe700	ETH: job changed
+06:44:42:248	b97fe700	new buf size: 0
+06:44:42:248	b97fe700	ETH: 12/05/17-06:44:42 - New job from eu1.ethermine.org:4444
+06:44:42:248	b97fe700	target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+06:44:42:248	b97fe700	ETH - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:44:42:248	b97fe700	ETH: GPU0 0.000 Mh/s
+06:44:42:248	b97fe700	 DCR - Total Speed: 0.000 Mh/s, Total Shares: 0, Rejected: 0
+06:44:42:248	b97fe700	 DCR: GPU0 0.000 Mh/s
+06:44:48:250	b97fe700	ETH: checking pool connection...
+06:44:48:250	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:44:48:315	b97fe700	got 248 bytes
+06:44:48:315	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x4e9c2ab615445c1c5917bcfb493d7d047206a0de1b5086c50f630ac86e65677a","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x476759"]}
+
+06:44:48:316	b97fe700	parse packet: 247
+06:44:48:316	b97fe700	ETH: job is the same
+06:44:48:316	b97fe700	new buf size: 0
+06:44:49:875	b9fff700	GPU0 DAG creation time - 9162 ms
+06:44:49:875	b9fff700	Setting DAG epoch #155 for GPU0 done
+06:44:50:052	b97fe700	got 248 bytes
+06:44:50:052	b97fe700	buf: {"id":0,"jsonrpc":"2.0","result":["0x293476e1d03a30fe8fe51a05a7eec1e300de316ffcf517869fdf3f971127016d","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675a"]}
+
+06:44:50:052	b97fe700	parse packet: 247
+06:44:50:052	b97fe700	ETH: job changed
+06:44:50:052	b97fe700	new buf size: 0
+06:44:50:052	b97fe700	ETH: 12/05/17-06:44:50 - New job from eu1.ethermine.org:4444
+06:44:50:053	b97fe700	target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+06:44:50:053	b97fe700	ETH - Total Speed: 18.848 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:44:50:053	b97fe700	ETH: GPU0 18.848 Mh/s
+06:44:50:053	b97fe700	 DCR - Total Speed: 25.130 Mh/s, Total Shares: 0, Rejected: 0
+06:44:50:053	b97fe700	 DCR: GPU0 25.130 Mh/s
+06:44:58:249	b97fe700	send: {"id":6,"worker":"testpc","jsonrpc":"2.0","method":"eth_submitHashrate","params":["0x1262b68", "0x000000000000000000000000000000000000000000000000000000000750b7d0"]}
+
+06:44:58:252	b97fe700	ETH: checking pool connection...
+06:44:58:252	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:44:58:314	b97fe700	got 39 bytes
+06:44:58:314	b97fe700	buf: {"id":6,"jsonrpc":"2.0","result":true}
+
+06:44:58:315	b97fe700	parse packet: 38
+06:44:58:315	b97fe700	new buf size: 0
+06:44:58:375	b97fe700	got 248 bytes
+06:44:58:375	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x293476e1d03a30fe8fe51a05a7eec1e300de316ffcf517869fdf3f971127016d","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675a"]}
+
+06:44:58:375	b97fe700	parse packet: 247
+06:44:58:376	b97fe700	ETH: job is the same
+06:44:58:376	b97fe700	new buf size: 0
+06:44:59:165	b8df6700	got 401 bytes
+06:44:59:165	b8df6700	buf: {"id":null,"method":"mining.notify","params":["75ec","58de17307b9930a2e4bd525d1e454b01275d1a4fcfeb3a130000008100000000","d6257eac041a77062c7a10e971ef8dbd7407fc2b87056a36eb768bb524cea2b24722e986b59e84a1cc44cea1ebd32f4ca5abea9eba26f80a45fe8f598e0949b601007d8c03b13e4f05000c000a9d00003bab001ac3b02cf301000000edee02009c2f0000bb86265a0000000000000000","05000000",[],"05000000","1a00ab3b","5a2686bb",true]}
+
+06:44:59:165	b8df6700	parse packet: 400
+06:44:59:166	b8df6700	new buf size: 0
+06:44:59:166	b8df6700	 DCR: 12/05/17-06:44:59 - New job from dcr.suprnova.cc:3252
+06:44:59:166	b8df6700	target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:45:00:700	8d49e700	srv_thr cnt: 1, IP: 127.0.0.1
+06:45:00:701	8d49e700	recv: 59
+06:45:00:701	8d49e700	
+06:45:00:702	8d49e700	GPU #0: GeForce GTX 1060 6GB, 6071 MB available, 10 compute units, capability: 6.1
+
+06:45:00:702	8d49e700	ETH - Total Speed: 19.278 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:45:00:702	8d49e700	ETH: GPU0 19.278 Mh/s
+06:45:00:702	8d49e700	 DCR - Total Speed: 25.703 Mh/s, Total Shares: 0, Rejected: 0
+06:45:00:703	8d49e700	 DCR: GPU0 25.703 Mh/s
+06:45:00:703	8d49e700	Incorrect ETH shares: none
+06:45:00:703	8d49e700	1 minute average ETH total speed: 19.250 Mh/s
+06:45:00:703	8d49e700	Pool switches: ETH - 0, DCR - 0
+06:45:00:703	8d49e700	Current ETH share target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+Current DCR share target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:45:00:704	8d49e700	GPU0 t=65C fan=36%
+06:45:00:704	8d49e700	
+06:45:00:705	8d49e700	sent: 4526
+06:45:01:132	b8df6700	got 401 bytes
+06:45:01:132	b8df6700	buf: {"id":null,"method":"mining.notify","params":["75ed","58de17307b9930a2e4bd525d1e454b01275d1a4fcfeb3a130000008100000000","56207fbe1ed0c9ad71c39b633913194f611fa29fdc669a9c3e656e5dd806b4ea0c6519bfc175d0cf80866eb362f99133464d06bee39a15d1f66f7404b747985001007d8c03b13e4f05000c000a9d00003bab001ac3b02cf301000000edee02009c2f0000bd86265a0000000000000000","05000000",[],"05000000","1a00ab3b","5a2686bd",true]}
+
+06:45:01:132	b8df6700	parse packet: 400
+06:45:01:132	b8df6700	new buf size: 0
+06:45:01:132	b8df6700	 DCR: 12/05/17-06:45:01 - New job from dcr.suprnova.cc:3252
+06:45:01:132	b8df6700	target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:45:03:576	dd7d5700	GPU0 t=66C fan=37%
+06:45:03:597	ddfd6700	em hbt: 1, dm hbt: 1, fm hbt: 94, 
+06:45:03:597	ddfd6700	watchdog - thread 0 (gpu0), hb time 29
+06:45:03:597	ddfd6700	watchdog - thread 1 (gpu0), hb time 131
+06:45:04:175	b8df6700	got 401 bytes
+06:45:04:175	b8df6700	buf: {"id":null,"method":"mining.notify","params":["75ee","58de17307b9930a2e4bd525d1e454b01275d1a4fcfeb3a130000008100000000","be2abb6f739b7353452cdabbab73cbb5e9b55e48100916178fc1fd6ff3b4579c6c64a6652b500b61ff5233686f1d4d1f496400ee7ec8643798abe690725a033801007d8c03b13e4f05000c000a9d00003bab001ac3b02cf301000000edee020097300000c086265a0000000000000000","05000000",[],"05000000","1a00ab3b","5a2686c0",true]}
+
+06:45:04:175	b8df6700	parse packet: 400
+06:45:04:175	b8df6700	new buf size: 0
+06:45:04:176	b8df6700	 DCR: 12/05/17-06:45:04 - New job from dcr.suprnova.cc:3252
+06:45:04:176	b8df6700	target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:45:08:254	b97fe700	ETH: checking pool connection...
+06:45:08:254	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:45:08:320	b97fe700	got 248 bytes
+06:45:08:320	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x293476e1d03a30fe8fe51a05a7eec1e300de316ffcf517869fdf3f971127016d","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675a"]}
+
+06:45:08:320	b97fe700	parse packet: 247
+06:45:08:321	b97fe700	ETH: job is the same
+06:45:08:321	b97fe700	new buf size: 0
+06:45:09:758	b97fe700	got 248 bytes
+06:45:09:758	b97fe700	buf: {"id":0,"jsonrpc":"2.0","result":["0xc9ba2c1bba486b8cd1b78ab24ddb795c7d14783379ff6e56441e164416590ea1","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675b"]}
+
+06:45:09:758	b97fe700	parse packet: 247
+06:45:09:758	b97fe700	ETH: job changed
+06:45:09:758	b97fe700	new buf size: 0
+06:45:09:758	b97fe700	ETH: 12/05/17-06:45:09 - New job from eu1.ethermine.org:4444
+06:45:09:758	b97fe700	target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+06:45:09:758	b97fe700	ETH - Total Speed: 19.289 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:45:09:758	b97fe700	ETH: GPU0 19.289 Mh/s
+06:45:09:758	b97fe700	 DCR - Total Speed: 25.718 Mh/s, Total Shares: 0, Rejected: 0
+06:45:09:758	b97fe700	 DCR: GPU0 25.718 Mh/s
+06:45:12:151	b8df6700	got 401 bytes
+06:45:12:151	b8df6700	buf: {"id":null,"method":"mining.notify","params":["75ef","58de17307b9930a2e4bd525d1e454b01275d1a4fcfeb3a130000008100000000","dd168784a01e3fff6369b17ca54ebed86b64a7db9d78495fae9fe6ff7023979bcfb819f660cb063f0d534990f130da0036394f329db053da5eb430486a06923001007d8c03b13e4f05000c000a9d00003bab001ac3b02cf301000000edee0200b7310000c886265a0000000000000000","05000000",[],"05000000","1a00ab3b","5a2686c8",true]}
+
+06:45:12:151	b8df6700	parse packet: 400
+06:45:12:151	b8df6700	new buf size: 0
+06:45:12:151	b8df6700	 DCR: 12/05/17-06:45:12 - New job from dcr.suprnova.cc:3252
+06:45:12:151	b8df6700	target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:45:16:545	b97fe700	got 248 bytes
+06:45:16:546	b97fe700	buf: {"id":0,"jsonrpc":"2.0","result":["0x372b7be98f8d49df5eab919bb5cfbe072ae83093524c4e8815fe79321d4d85b3","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675c"]}
+
+06:45:16:547	b97fe700	parse packet: 247
+06:45:16:547	b97fe700	ETH: job changed
+06:45:16:547	b97fe700	new buf size: 0
+06:45:16:548	b97fe700	ETH: 12/05/17-06:45:16 - New job from eu1.ethermine.org:4444
+06:45:16:548	b97fe700	target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+06:45:16:548	b97fe700	ETH - Total Speed: 19.278 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:45:16:548	b97fe700	ETH: GPU0 19.278 Mh/s
+06:45:16:549	b97fe700	 DCR - Total Speed: 25.704 Mh/s, Total Shares: 0, Rejected: 0
+06:45:16:549	b97fe700	 DCR: GPU0 25.704 Mh/s
+06:45:18:251	b97fe700	send: {"id":6,"worker":"testpc","jsonrpc":"2.0","method":"eth_submitHashrate","params":["0x1262349", "0x000000000000000000000000000000000000000000000000000000000750b7d0"]}
+
+06:45:18:255	b97fe700	ETH: checking pool connection...
+06:45:18:255	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:45:18:317	b97fe700	got 39 bytes
+06:45:18:318	b97fe700	buf: {"id":6,"jsonrpc":"2.0","result":true}
+
+06:45:18:318	b97fe700	parse packet: 38
+06:45:18:318	b97fe700	new buf size: 0
+06:45:18:380	b97fe700	got 248 bytes
+06:45:18:380	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x372b7be98f8d49df5eab919bb5cfbe072ae83093524c4e8815fe79321d4d85b3","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675c"]}
+
+06:45:18:380	b97fe700	parse packet: 247
+06:45:18:380	b97fe700	ETH: job is the same
+06:45:18:380	b97fe700	new buf size: 0
+06:45:28:256	b97fe700	ETH: checking pool connection...
+06:45:28:256	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:45:28:283	b97fe700	got 248 bytes
+06:45:28:283	b97fe700	buf: {"id":0,"jsonrpc":"2.0","result":["0x1c72db9c83aff0472b9105c50518bae12c02ef4725812653180b03e0b83c77df","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675d"]}
+
+06:45:28:283	b97fe700	parse packet: 247
+06:45:28:283	b97fe700	ETH: job changed
+06:45:28:283	b97fe700	new buf size: 0
+06:45:28:283	b97fe700	ETH: 12/05/17-06:45:28 - New job from eu1.ethermine.org:4444
+06:45:28:283	b97fe700	target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+06:45:28:283	b97fe700	ETH - Total Speed: 18.947 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:45:28:283	b97fe700	ETH: GPU0 18.947 Mh/s
+06:45:28:283	b97fe700	 DCR - Total Speed: 25.262 Mh/s, Total Shares: 0, Rejected: 0
+06:45:28:283	b97fe700	 DCR: GPU0 25.262 Mh/s
+06:45:28:527	b97fe700	got 248 bytes
+06:45:28:528	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x1c72db9c83aff0472b9105c50518bae12c02ef4725812653180b03e0b83c77df","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675d"]}
+
+06:45:28:528	b97fe700	parse packet: 247
+06:45:28:529	b97fe700	ETH: job is the same
+06:45:28:529	b97fe700	new buf size: 0
+06:45:30:739	8d49e700	srv_thr cnt: 1, IP: 127.0.0.1
+06:45:30:744	8d49e700	recv: 59
+06:45:30:745	8d49e700	
+06:45:30:746	8d49e700	GPU #0: GeForce GTX 1060 6GB, 6071 MB available, 10 compute units, capability: 6.1
+
+06:45:30:746	8d49e700	ETH - Total Speed: 19.273 Mh/s, Total Shares: 0, Rejected: 0, Time: 00:00
+06:45:30:746	8d49e700	ETH: GPU0 19.273 Mh/s
+06:45:30:747	8d49e700	 DCR - Total Speed: 25.697 Mh/s, Total Shares: 0, Rejected: 0
+06:45:30:747	8d49e700	 DCR: GPU0 25.697 Mh/s
+06:45:30:747	8d49e700	Incorrect ETH shares: none
+06:45:30:747	8d49e700	1 minute average ETH total speed: 19.256 Mh/s
+06:45:30:747	8d49e700	Pool switches: ETH - 0, DCR - 0
+06:45:30:747	8d49e700	Current ETH share target: 0x0000000112e0be82 (diff: 4000MH), epoch 155(2.21GB)
+Current DCR share target: 0x0000000007fff800 (diff: 137GH), block #192237
+06:45:30:748	8d49e700	GPU0 t=70C fan=47%
+06:45:30:748	8d49e700	
+06:45:30:749	8d49e700	sent: 7090
+06:45:33:583	dd7d5700	GPU0 t=71C fan=48%
+06:45:33:623	ddfd6700	em hbt: 1, dm hbt: 1, fm hbt: 95, 
+06:45:33:623	ddfd6700	watchdog - thread 0 (gpu0), hb time 30
+06:45:33:623	ddfd6700	watchdog - thread 1 (gpu0), hb time 133
+06:45:38:252	b97fe700	send: {"id":6,"worker":"testpc","jsonrpc":"2.0","method":"eth_submitHashrate","params":["0x1261836", "0x000000000000000000000000000000000000000000000000000000000750b7d0"]}
+
+06:45:38:258	b97fe700	ETH: checking pool connection...
+06:45:38:258	b97fe700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+06:45:38:316	b97fe700	got 39 bytes
+06:45:38:317	b97fe700	buf: {"id":6,"jsonrpc":"2.0","result":true}
+
+06:45:38:317	b97fe700	parse packet: 38
+06:45:38:317	b97fe700	new buf size: 0
+06:45:38:376	b97fe700	got 248 bytes
+06:45:38:376	b97fe700	buf: {"id":3,"jsonrpc":"2.0","result":["0x1c72db9c83aff0472b9105c50518bae12c02ef4725812653180b03e0b83c77df","0x1e9891b51a83da3e735c71999400fc8927e8614e86fc37e618d3781578d5c939","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x47675d"]}
+
+06:45:38:376	b97fe700	parse packet: 247
+06:45:38:376	b97fe700	ETH: job is the same
+06:45:38:376	b97fe700	new buf size: 0

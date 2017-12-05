@@ -1,0 +1,114 @@
+10:57:24:410	5b1b7bc0	Check and remove old log files...
+10:57:24:411	5b1b7bc0	args: -eworker testpc -epool eu1.ethermine.org:4444 -ewal 0xA204eF1E3E192C78F12f1fFac60F29317C07B495 -epsw x -dpool dcr.suprnova.cc:3252 -dcoin dcr -dwal coinscrow.1 -dpsw x -mode 0 -dcri 4 
+10:57:24:411	5b1b7bc0	
+10:57:24:411	5b1b7bc0	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+10:57:24:411	5b1b7bc0	บ     Claymore's Dual ETH + DCR/SC/LBC/PASC GPU Miner v10.2      บ
+10:57:24:411	5b1b7bc0	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+10:57:24:411	5b1b7bc0	
+10:57:24:611	5b1b7bc0	ETH: 1 pool is specified
+10:57:24:611	5b1b7bc0	Main Ethereum pool is eu1.ethermine.org:4444
+10:57:24:611	5b1b7bc0	DCR: 1 pool is specified
+10:57:24:611	5b1b7bc0	Main Decred pool is dcr.suprnova.cc:3252
+10:57:24:643	5b1b7bc0	OpenCL platform: NVIDIA CUDA
+10:57:24:643	5b1b7bc0	AMD OpenCL platform not found 
+10:57:24:647	5b1b7bc0	CUDA initializing...
+
+10:57:24:648	5b1b7bc0	NVIDIA Cards available: 1 
+10:57:24:648	5b1b7bc0	CUDA Driver Version/Runtime Version: 9.1/8.0
+10:57:24:648	5b1b7bc0	GPU #0: GeForce GTX 1060 6GB, 6071 MB available, 10 compute units, capability: 6.1
+
+10:57:24:648	5b1b7bc0	Total cards: 1 
+10:57:28:649	5b1b7bc0	No AMD cards in the list, ADL library will not be used.
+10:57:28:653	5b1b7bc0	NVML version: 9.387.22
+10:57:28:807	ffff700	ETH: Stratum - connecting to 'eu1.ethermine.org' <46.105.121.53> port 4444
+10:57:28:841	5b1b7bc0	DUAL MINING MODE ENABLED: ETHEREUM+DECRED
+10:57:28:841	5b1b7bc0	ETH: eth-proxy stratum mode
+10:57:28:841	5b1b7bc0	Watchdog enabled
+10:57:28:841	5b1b7bc0	Remote management (READ-ONLY MODE) is enabled on port 3333
+10:57:28:841	5b1b7bc0	
+10:57:28:861	ffff700	send: {"worker": "testpc", "jsonrpc": "2.0", "params": ["0xA204eF1E3E192C78F12f1fFac60F29317C07B495", "x"], "id": 2, "method": "eth_submitLogin"}
+
+10:57:28:861	ffff700	ETH: Stratum - Connected (eu1.ethermine.org:4444)
+10:57:28:899	f7fe700	 DCR: Stratum - connecting to 'dcr.suprnova.cc' <217.182.138.167> port 3252
+10:57:28:922	ffff700	got 39 bytes
+10:57:28:922	ffff700	buf: {"id":2,"jsonrpc":"2.0","result":true}
+
+10:57:28:922	ffff700	parse packet: 38
+10:57:28:922	ffff700	ETH: Authorized
+10:57:28:922	ffff700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+10:57:28:922	ffff700	new buf size: 0
+10:57:28:955	f7fe700	send: {"id": 1, "method": "mining.subscribe", "params": ["dual 1.0"]}
+
+10:57:28:955	f7fe700	send: {"id": 5, "method": "mining.extranonce.subscribe", "params": []}
+
+10:57:28:955	f7fe700	send: {"id": 2, "method": "mining.authorize", "params": ["coinscrow.1","x"]}
+
+10:57:28:955	f7fe700	 DCR: Stratum - Connected (dcr.suprnova.cc:3252)
+10:57:28:983	ffff700	got 248 bytes
+10:57:28:983	ffff700	buf: {"id":3,"jsonrpc":"2.0","result":["0xdaf050335da2639284858e0f689b0e3e9fce7d38e3591a3396c8a797af29b538","0x7b1e42ac7d205c8da33a3dea0e5fd6aa0261c13f0a8e451454721085d1323eec","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x476b15"]}
+
+10:57:28:983	ffff700	parse packet: 247
+10:57:28:983	ffff700	ETH: job changed
+10:57:28:983	ffff700	new buf size: 0
+10:57:29:016	f7fe700	got 578 bytes
+10:57:29:016	f7fe700	buf: {"id":1,"result":[[["mining.notify","deadbeefcafebabe46c71a0000000000"]],"699174b57c5d9d84d34ddbce",12],"error":null}
+{"id":null,"method":"mining.set_difficulty","params":[16]}
+{"id":null,"method":"mining.notify","params":["d1d0","418d17636db1474f44838670b00e9d8964178f62e44fe7a10000006f00000000","a607c47219d864ba389e306b930e42fb43d6f54402e1b6cc6c8e277e0e59bb3c102d22d558fba502d87cfef496e3462d3fdace687ba9d179e46d4011a8dbc6780100c63d3f1be7a0050014008a9d00006da6001a16b600fa010000001def02005b3c0000cec1265a0000000000000000","05000000",[],"05000000","1a00a66d","5a26c1ce",true]}
+
+10:57:29:016	f7fe700	parse packet: 117
+10:57:29:016	f7fe700	remove first packet 460
+10:57:29:016	f7fe700	new buf size: 460
+10:57:29:016	f7fe700	parse packet: 58
+10:57:29:016	f7fe700	remove first packet 401
+10:57:29:016	f7fe700	new buf size: 401
+10:57:29:016	f7fe700	parse packet: 400
+10:57:29:017	f7fe700	new buf size: 0
+10:57:29:045	153ff700	Setting DAG epoch #156...
+10:57:29:074	f7fe700	got 36 bytes
+10:57:29:074	f7fe700	buf: {"id":2,"result":true,"error":null}
+
+10:57:29:074	f7fe700	parse packet: 35
+10:57:29:074	f7fe700	 DCR: Authorized
+10:57:29:074	f7fe700	new buf size: 0
+10:57:31:479	153ff700	Setting DAG epoch #156 for GPU0
+10:57:31:479	153ff700	Create GPU buffer for GPU0
+10:57:38:985	ffff700	ETH: checking pool connection...
+10:57:38:985	ffff700	send: {"worker": "", "jsonrpc": "2.0", "params": [], "id": 3, "method": "eth_getWork"}
+
+10:57:39:215	ffff700	got 248 bytes
+10:57:39:215	ffff700	buf: {"id":3,"jsonrpc":"2.0","result":["0xdaf050335da2639284858e0f689b0e3e9fce7d38e3591a3396c8a797af29b538","0x7b1e42ac7d205c8da33a3dea0e5fd6aa0261c13f0a8e451454721085d1323eec","0x0112e0be826d694b2e62d01511f12a6061fbaec8bc02357593e70e52ba","0x476b15"]}
+
+10:57:39:215	ffff700	parse packet: 247
+10:57:39:215	ffff700	ETH: job is the same
+10:57:39:215	ffff700	new buf size: 0
+10:57:40:674	153ff700	GPU0 DAG creation time - 9184 ms
+10:57:40:674	153ff700	Setting DAG epoch #156 for GPU0 done
+10:57:40:782	153ff700	ETH: put share nonce 62e9a5e400264a81
+10:57:40:782	153ff700	ETH round found 1 shares
+10:57:40:783	ffff700	ETH: 12/05/17-10:57:40 - SHARE FOUND - (GPU 0)
+10:57:40:783	ffff700	send: {"worker":"testpc","id":10,"method":"eth_submitWork","params":["0x62e9a5e400264a81","0xdaf050335da2639284858e0f689b0e3e9fce7d38e3591a3396c8a797af29b538","0x8dbe3a97ec48f12e4183908d9ab5f0bead761c251c5f5132b52d1e031bdd637c"]}
+
+10:57:40:851	ffff700	got 40 bytes
+10:57:40:851	ffff700	buf: {"id":10,"jsonrpc":"2.0","result":true}
+
+10:57:40:851	ffff700	parse packet: 39
+10:57:40:851	ffff700	ETH: Share accepted (68 ms)!
+10:57:40:851	ffff700	new buf size: 0
+10:57:43:606	d7fa700	srv_thr cnt: 1, IP: 127.0.0.1
+10:57:43:613	d7fa700	recv: 59
+10:57:43:613	d7fa700	
+10:57:43:613	d7fa700	GPU #0: GeForce GTX 1060 6GB, 6071 MB available, 10 compute units, capability: 6.1
+
+10:57:43:613	d7fa700	ETH - Total Speed: 19.277 Mh/s, Total Shares: 1, Rejected: 0, Time: 00:00
+10:57:43:613	d7fa700	ETH: GPU0 19.277 Mh/s
+10:57:43:614	d7fa700	 DCR - Total Speed: 25.702 Mh/s, Total Shares: 0, Rejected: 0
+10:57:43:614	d7fa700	 DCR: GPU0 25.702 Mh/s
+10:57:43:614	d7fa700	Incorrect ETH shares: none
+10:57:43:614	d7fa700	1 minute average ETH total speed: 19.242 Mh/s
+10:57:43:614	d7fa700	Pool switches: ETH - 0, DCR - 0
+10:57:43:614	d7fa700	Current ETH share target: 0x0000000112e0be82 (diff: 4000MH), epoch 156(2.22GB)
+Current DCR share target: 0x000000000ffff000 (diff: 68GH), block #192285
+10:57:43:614	d7fa700	GPU0 t=57C fan=80%
+10:57:43:614	d7fa700	
+10:57:43:615	d7fa700	sent: 3634

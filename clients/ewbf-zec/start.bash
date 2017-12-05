@@ -1,0 +1,1 @@
+--server equihash.eu.nicehash.com --port 3357 --user 1BWawSHy4gXJ2BDFwmEseaxoY61eWP6h55.testpc --pass x --api 127.0.0.1:42000

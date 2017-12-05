@@ -1,0 +1,11 @@
+06:48:51:841	78a95740	args: -zpool ssl://eu1-zcash.flypool.org:3443 -zwal t1MGMoah3jueaQfAzonah5ZQrohUY7ASY8N.testpc -zpsw hello@coinscrow.io -asm 1 
+06:48:51:841	78a95740	
+06:48:51:841	78a95740	ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+06:48:51:841	78a95740	บ             Claymore's ZCash AMD GPU Miner v12.6               บ
+06:48:51:841	78a95740	ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+06:48:51:841	78a95740	
+06:48:52:042	78a95740	ZEC: 1 pool is specified
+06:48:52:042	78a95740	Main ZCash pool is eu1-zcash.flypool.org:3443
+06:48:52:059	78a95740	OpenCL platform: NVIDIA CUDA
+06:48:52:061	78a95740	AMD OpenCL platform not found 
+06:48:52:061	78a95740	No AMD OPENCLGPUs found, exit

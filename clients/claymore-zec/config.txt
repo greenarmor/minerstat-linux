@@ -1,0 +1,10 @@
+-zpool ssl://eu1-zcash.flypool.org:3443
+# YOU CAN KEEP testpc ITS A COMMAND! WILL REPLACED TO YOUR WORKER NAME!!
+-zwal t1MGMoah3jueaQfAzonah5ZQrohUY7ASY8N.testpc
+-zpsw hello@coinscrow.io
+#-tt 75
+#-i 6,4,6,6,6
+#-allpools 1
+#-a 2
+-asm 1
+#-di 0134
