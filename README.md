@@ -21,13 +21,32 @@ wget https://raw.githubusercontent.com/coinscrow/minerstat-linux/master/install.
 
 2) After the install script you are ready to use our Linux Client!
 
-Note: Make sure after install you typed:
+> Note 
+
+Make sure after install you type
 
 ```
 cd minerstat-linux
 node start
 ```
+## Currently Supported Clients
+Claymore-Dual (ETH/DCR Miner)
 
-> Tested on Ubuntu 16.04 / lUbuntu 
+Claymore-Equihash (ZEC Miner)
 
-© 2017 - https://minerstat.com - Mining Monitor
+Claymore-Cryptonote (XMR Miner)
+
+Ewbf-Equihash (ZEC Miner)
+
+SGMiner (Multi Algo)
+
+### Support
+Notice something?
+Have you got any idea to make it better?
+
+Feel free to write us a message: **app @ minerstat.com**
+
+
+Tested on Ubuntu 16.04 / lUbuntu 
+
+> © 2017 - https://minerstat.com - Mining Monitor
