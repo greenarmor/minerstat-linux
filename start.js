@@ -20,13 +20,13 @@ clearInterval(global.timeout); tools.restart();  }    })
 process.on('unhandledRejection', (reason, p) => { });
 
 function header() {
+console.log('\033[2J');
 console.log(colors.cyan('/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*'));
 console.log(colors.cyan('------------------------ v0.1 Linux Beta ---------------------------'));
 console.log(colors.cyan("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 console.log('');
 let input_text = "minerstat";
 let text ="/*\n" + ascii_text_generator(input_text,"2") + "\n*/";
-console.log('\033[2J');
 console.log(text);
 }
 
