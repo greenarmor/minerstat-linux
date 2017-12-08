@@ -1,6 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 // MINERSTAT.COM - LINUX CLIENT BETA
 
+"use strict";
+
 var colors = require('colors'); var sleep = require('sleep');
 var pump = require('pump'); var fs = require('fs');
 let ascii_text_generator = require('ascii-text-generator');
