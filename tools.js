@@ -25,9 +25,9 @@ start: function () {
 var sleep = require('sleep');
 sleep.sleep(3);
     
-console.log(colors.cyan(getDateTime() + " STARTING MINER: " + global.client + " (8 sec..)"));
+console.log(colors.cyan(getDateTime() + " STARTING MINER: " + global.client + " (3 sec..)"));
 
-sleep.sleep(8);
+sleep.sleep(3);
 
 if (global.client == "claymore-eth") {
    
@@ -72,6 +72,21 @@ var parse = require('parse-spawn-args').parse
 var args = parse(global.chunk);
         
 require("child_process").spawn('clients/'+global.client+'/miner', args, {
+  cwd: process.cwd(),
+  detached: false,
+  stdio: "inherit"
+});
+
+    
+}
+
+
+if (global.client == "ethminer") {
+
+var parse = require('parse-spawn-args').parse
+var args = parse(global.chunk);
+        
+require("child_process").spawn('clients/'+global.client+'/ethminer', args, {
   cwd: process.cwd(),
   detached: false,
   stdio: "inherit"
@@ -141,6 +156,7 @@ const fkill = require('fkill');
 
 try {
 fkill('zecminer64').then(() => { });
+fkill('ethminer').then(() => { });
 fkill('ethdcrminer64').then(() => { });
 fkill('miner').then(() => { });
 fkill('sgminer').then(() => { });
@@ -170,6 +186,13 @@ fkill('nsgpucnminer').then(() => { });
 
  // GET LOG FILE
 
+if(global.client.indexOf("ethminer") > -1) {
+    
+// INTEGRATED TO THE CLIENT 
+global.sync = new Boolean(true);
+// START WITH --token ACCESKEY --worker WORKERNAME
+    
+}
 
 
 if(global.client.indexOf("claymore") > -1) {

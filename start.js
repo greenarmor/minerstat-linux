@@ -22,7 +22,6 @@ clearInterval(global.timeout); tools.restart();  }    })
 process.on('unhandledRejection', (reason, p) => { });
 
 function header() {
-console.log('\033[2J');
 console.log(colors.cyan('/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*'));
 console.log(colors.cyan('------------------------ v0.1 Linux Beta ---------------------------'));
 console.log(colors.cyan("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
@@ -80,15 +79,17 @@ if(global.client === "claymore-xmr") { global.db = "xmr"; }
 if(global.client === "claymore-zec") { global.db = "zec"; } 
 if(global.client === "ewbf-zec") { global.db = "ezec"; } 
 if(global.client === "sgminer-gm") { global.db = "sgg"; } 
-    
+if(global.client === "ethminer") { global.db = "genoil"; }
+
 if(global.client.indexOf("ewbf") > -1) { global.file = "clients/"+ global.client + "/start.bash"; }
+if(global.client.indexOf("ethminer") > -1) { global.file = "clients/"+ global.client + "/start.bash"; }
 if(global.client.indexOf("claymore") > -1) { global.file = "clients/"+ global.client + "/config.txt"; }
 if(global.client.indexOf("sgminer") > -1) { global.file = "sgminer.conf"; }
 
 needle.get('https://minerstat.com/getconfig.php?action=simple&token='+ global.accesskey +'&worker=' + global.worker + '&db=' + global.db, function(error, response) {
 global.chunk = response.body;
 
-if(global.client != "ewbf-zec") {
+if(global.client != "ewbf-zec" && global.client != "ethminer") {
 
 var writeStream = fs.createWriteStream(global.path + "/" + global.file);
 console.log(global.chunk);
@@ -130,6 +131,8 @@ tools.remotecommand();
 tools.fetch();
 
 if (global.sync_num > 1) { //SKIP THE FIRST SYNC
+    
+    if (global.client !== "ethminer") { //SKIP ETHMIENR BECAUSE INTEGRATED
       
 // SEND LOG TO SERVER
 
@@ -153,6 +156,7 @@ console.log(colors.red("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 
 
 
+}
 }
 
 }, 30000);
