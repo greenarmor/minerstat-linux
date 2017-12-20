@@ -1,7 +1,7 @@
 sudo apt-get --assume-yes install git nodejs unzip npm ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev
 git clone https://github.com/coinscrow/minerstat-linux/
 cd minerstat-linux
-npm install colors sleep pump request express sphp progress ascii-text-generator fkill needle
+npm install colors sleep pump request express sphp progress ascii-text-generator fkill needle parse-spawn-args
 
 echo " "
 echo "Please enter your minerstat.com AccessKey: "
