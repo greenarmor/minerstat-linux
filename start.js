@@ -7,10 +7,11 @@ var colors = require('colors'); var sleep = require('sleep');
 var pump = require('pump'); var fs = require('fs');
 let ascii_text_generator = require('ascii-text-generator');
 
-var tools = require('./tools.js');
-var settings = require("./config.js");
+global.timeout; global.gputype;
 
-global.timeout;
+var tools = require('./tools.js');
+var monitor = require('./monitor.js');
+var settings = require("./config.js");
 
 process.on('SIGINT', function() {
 console.log("Ctrl + C --> Closing running miner & minerstat");
@@ -40,6 +41,7 @@ module.exports = {
 main: function () {
 
 tools.killall();
+monitor.detect();
 
 global.sync; global.res_data; global.sync_num; global.sync = new Boolean(false);
 global.sync_num = 0; global.res_data = "";
@@ -115,6 +117,8 @@ console.log(global.chunk);
 tools.killall();
 tools.start();    
 }
+
+console.log(colors.cyan(getDateTime() + " GPU TYPE: " + global.gputype));
 
 });
     
