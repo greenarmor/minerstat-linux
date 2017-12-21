@@ -6,7 +6,6 @@ var sleep = require('sleep');
 var pump = require('pump');
 var fs = require('fs');
 
-
 // VARIBLES
 
 function getDateTime() {
@@ -29,6 +28,19 @@ console.log(colors.cyan(getDateTime() + " STARTING MINER: " + global.client + " 
 
 sleep.sleep(3);
 
+if(global.client.indexOf("ccminer") > -1) {
+
+  var parse = require('parse-spawn-args').parse
+  var args = parse(global.chunk);
+          
+  require("child_process").spawn('clients/'+global.client+'/ccminer', args, {
+    cwd: process.cwd(),
+    detached: false,
+    stdio: "inherit"
+  });
+
+}
+
 if (global.client == "claymore-eth") {
    
 require("child_process").spawn('clients/'+global.client+'/ethdcrminer64', {
@@ -37,10 +49,7 @@ require("child_process").spawn('clients/'+global.client+'/ethdcrminer64', {
   stdio: "inherit"
 });
 
-    
 }
-
-
 
 if (global.client == "claymore-zec") {
    
@@ -49,10 +58,8 @@ require("child_process").spawn('clients/'+global.client+'/zecminer64', {
   detached: false,
   stdio: "inherit"
 });
-
     
 }
-
 
 if (global.client == "claymore-xmr") {
    
@@ -62,9 +69,7 @@ require("child_process").spawn('clients/'+global.client+'/nsgpucnminer', {
   stdio: "inherit"
 });
 
-    
 }
-
 
 if (global.client == "ewbf-zec") {
 
@@ -77,9 +82,7 @@ require("child_process").spawn('clients/'+global.client+'/miner', args, {
   stdio: "inherit"
 });
 
-    
 }
-
 
 if (global.client == "ethminer") {
 
@@ -91,10 +94,8 @@ require("child_process").spawn('clients/'+global.client+'/ethminer', args, {
   detached: false,
   stdio: "inherit"
 });
-
-    
+  
 }
-
 
 if (global.client == "sgminer-gm") {
 
@@ -107,10 +108,8 @@ var args = parse(larg);
   detached: false,
   stdio: "inherit"
 });
-
-    
+ 
 }
-
 },
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -155,6 +154,7 @@ killall: function () {
 const fkill = require('fkill');
 
 try {
+fkill('ccminer').then(() => { });
 fkill('zecminer64').then(() => { });
 fkill('ethminer').then(() => { });
 fkill('ethdcrminer64').then(() => { });
@@ -208,14 +208,36 @@ req.on('error', function(err) {  console.log(colors.red(getDateTime() + " MINERS
 
 }
 
+if(global.client.indexOf("ccminer") > -1) {
+
+  const netc = require('net');
+  const clientc = netc.createConnection({ port: 3333 }, () => {
+    clientc.write("summary");
+  });
+  clientc.on('data', (data) => {
+    console.log(data.toString());
+    global.res_data = data.toString();
+    
+    if (data.toString() === "") {
+        global.sync = new Boolean(false);     
+    } else {    
+      global.sync = new Boolean(true);
+    }
+    
+    clientc.end();
+  });
+  clientc.on('end', () => {
+  });  
+
+}
 
 if(global.client.indexOf("ewbf") > -1) {
 
-const net = require('net');
-const client = net.createConnection({ port: 42000 }, () => {
-  client.write("{\"id\":2, \"method\":\"getstat\"}\n");
+  const nete = require('net');
+const cliente = nete.createConnection({ port: 42000 }, () => {
+  cliente.write("{\"id\":2, \"method\":\"getstat\"}\n");
 });
-client.on('data', (data) => {
+cliente.on('data', (data) => {
   console.log(data.toString());
   global.res_data = data.toString();
   
@@ -225,9 +247,9 @@ client.on('data', (data) => {
     global.sync = new Boolean(true);
   }
   
-  client.end();
+  cliente.end();
 });
-client.on('end', () => {
+cliente.on('end', () => {
 });
 
 
@@ -235,11 +257,11 @@ client.on('end', () => {
 
 if(global.client.indexOf("sgminer") > -1) {
 
-const net = require('net');
-const client = net.createConnection({ port: 4028 }, () => {
-  client.write("summary+pools+devs");
+  const nets = require('net');
+const clients = nets.createConnection({ port: 4028 }, () => {
+  clients.write("summary+pools+devs");
 });
-client.on('data', (data) => {
+clients.on('data', (data) => {
   console.log(data.toString());
   global.res_data = data.toString();
   
@@ -249,9 +271,9 @@ client.on('data', (data) => {
     global.sync = new Boolean(true);
   }
   
-  client.end();
+  clients.end();
 });
-client.on('end', () => {
+clients.on('end', () => {
 });
 
 }
