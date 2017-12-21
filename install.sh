@@ -1,6 +1,6 @@
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo apt-get --assume-yes update
-sudo apt-get --assume-yes install git nodejs unzip npm ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev gcc-4.9 libssl-dev libjansson-dev
+sudo apt-get --assume-yes install git nodejs unzip npm ocl-icd-opencl-dev libcurl3:i386 libcurl4-openssl-dev gcc-4.9 libssl-dev libjansson-dev libpci-dev
 sudo apt-get --assume-yes upgrade libstdc++6
 git clone https://github.com/coinscrow/minerstat-linux/
 cd minerstat-linux
