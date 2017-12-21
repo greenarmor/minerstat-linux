@@ -1,13 +1,13 @@
-# minerstat.com - Linux Beta v0.1
+# minerstat.com - Linux Beta v0.2
 
-> For testing only!
+> Feel free to test!
 
 # Dependencies
 Linux OS with Installed Graphics Drivers
 
 # Basic
 
-1) Register at minerstat.com
+1) Register a new account on minerstat.com
 2) Create a new worker (Node, Linux , AMD/Nvidia)
 3) Mofify your configs in Config Editor -> Save
 
@@ -30,18 +30,24 @@ cd minerstat-linux
 node start
 ```
 ## Currently Supported Clients
-Claymore-Dual (ETH/DCR Miner)
+CCminer-Tpruvot (Nvidia Multi Miner)
 
-Claymore-Equihash (ZEC Miner)
+CCminer-DJM34 (Nvidia XZC Miner)
 
-Claymore-Cryptonote (XMR Miner)
+Ethminer (Nvidia/AMD EthHash Miner)
 
-Ewbf-Equihash (ZEC Miner)
+Claymore-Dual (Nvidia/AMD ETH/DCR Miner)
 
-SGMiner (Multi Algo)
+Claymore-Equihash (AMD ZEC Miner)
+
+Claymore-Cryptonote (AMD XMR Miner)
+
+Ewbf-Equihash (AMD ZEC Miner)
+
+SGMiner (NVIDIA/AMD Multi Algo)
 
 ### Support
-Notice something?
+Noticed something?
 Have you got any idea to make it better?
 
 Feel free to write us a message: **app @ minerstat.com**
