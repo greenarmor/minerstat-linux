@@ -24,10 +24,10 @@ process.on('unhandledRejection', (reason, p) => { });
 
 function header() {
 console.log(colors.cyan('/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*'));
-console.log(colors.cyan('------------------------ v0.2 Linux Beta ---------------------------'));
+console.log(colors.cyan('------------------------ v0.3 Linux Beta ---------------------------'));
 console.log(colors.cyan("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 console.log('');
-let input_text = "minerstat";
+let input_text = "minerstAt";
 let text ="/*\n" + ascii_text_generator(input_text,"2") + "\n*/";
 console.log(text);
 }
@@ -119,6 +119,7 @@ tools.start();
 }
 
 console.log(colors.cyan(getDateTime() + " GPU TYPE: " + global.gputype));
+console.log("*** Hardware monitor is running in the background.. ***");
 
 });
     
@@ -140,12 +141,17 @@ tools.fetch();
 if (global.sync_num > 1) { //SKIP THE FIRST SYNC
 if (global.client !== "ethminer") { //SKIP ETHMINER BECAUSE INTEGRATED
       
-// SEND LOG TO SERVER
-
 var sync = global.sync;
 var res_data = global.res_data;
 
 if(sync.toString() === "true"){ // IS HASHING?
+
+// Hardware Monitor
+
+if (global.gputype === "nvidia") { monitor.HWnvidia();  }
+if (global.gputype === "amd") { monitor.HWamd();  }
+
+// SEND LOG TO SERVER
 
 var request = require('request');
 request.post({

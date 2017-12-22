@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
-// MINERSTAT.COM - LINUX CLIENT BETA
+// MINERSTAT.COM - Hardware Monitor
 
 module.exports = {
 
@@ -39,7 +39,6 @@ child = exec("bin/amdmeminfo",
         }
 });
 
-
 },
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,28 +46,74 @@ child = exec("bin/amdmeminfo",
 
 HWamd: function () {
 
-// TO DO AS NVIDIA
-// AMDMEMINFO QUERY
-// POST DATA TO THE SERVER
+  var exec = require('child_process').exec;
+
+  var query = exec("nvidia-smi --query-gpu=count --format=csv,noheader",
+  function (error, stdout, stderr) {
+
+  isfinished(stdout,stderr,"amd");
+
+  });
 
 },
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // NVIDIA-SMI (for GPU Temp/Fan/ ... monitoring)
 
-// gpucount > nvidia-smi --query-gpu=count --format=csv,noheader
-// fans > nvidia-smi -i 0 --query-gpu=fan.speed --format=csv,noheader
-// temp > nvidia-smi -i 0 --query-gpu=temperature.gpu --format=csv,noheader
-
 HWnvidia: function () {
 
-// TO DO
-// CREATE LOOP EVERY MINUTE
-// WHILE X != GPUCOUNT
-// FAN, TEMP to array
-// JSON 
+var lstart = -1;
+
+var exec = require('child_process').exec;
+var gpunum;
+var hwg = []; var hwf = [];
+
+gpunum = exec("nvidia-smi --query-gpu=count --format=csv,noheader",
+function (error, stdout, stderr) {
+var response = stdout;
+
+while (lstart != (response - 1)) {
+
+lstart ++;  
+var temp = 0; 
+var fan = 0;
+
+var q1 = exec("nvidia-smi -i "+lstart+" --query-gpu=temperature.gpu --format=csv,noheader", 
+function (error, stdout, stderr) { 
+
+temp = stdout;
+
+var q2 = exec("nvidia-smi -i "+lstart+" --query-gpu=fan.speed --format=csv,noheader", 
+function (error, stdout, stderr) { 
+
+fan = stdout; 
+  
+// ADD DATA TO ARRAY
+hwg.push(temp); 
+hwf.push(fan); 
+ 
+if (lstart == (response - 1)) { isfinished(hwg,hwf,"nvidia"); }
+
+}); });
+
+} // END WHILE
+}); // END FETCH
+} // END HWNvidia
+} // END MODULE.EXPORT
+
+function isfinished(hwg,hwf,typ) {
+
+if (typ === "nvidia") {
+// ARRAY to JSON
+  var hwg = JSON.stringify(hwg);
+  var hwf = JSON.stringify(hwf);
+}
+
 // SEND DATA TO THE SERVER
 
-}
+var request = require('request');
+request.post({
+url: 'https://minerstat.com/gethw.php?token='+ global.accesskey +'&worker='+ global.worker+'&fan='+hwf+'&gpu='+hwg, form: { mes: typ }
+}, function(error, response, body){ });
 
-}
+} // END isfinished();
