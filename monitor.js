@@ -109,6 +109,10 @@ if (typ === "nvidia") {
   var hwf = JSON.stringify(hwf);
 }
 
+// DUMP LOG TO THE CONSOLE
+console.log("["+typ+"] Hardware Monitor: " + hwg, hwf);
+
+
 // SEND DATA TO THE SERVER
 
 var request = require('request');

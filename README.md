@@ -1,6 +1,7 @@
 # minerstat.com - Linux Beta v0.3
 
 > with Hardware Monitor!
+
 > [STABLE] it can run weeks without downtime!
 
 # Dependencies
