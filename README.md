@@ -31,6 +31,18 @@ Make sure after install you type
 cd minerstat-linux
 node start
 ```
+
+# Setup Alias to Start Mining
+
+```
+echo "alias minerstat='cd /home/user/minerstat-linux/; node start;'" >> ~/.bashrc && source ~/.bashrc
+```
+
+change the /home/user/minerstat-linux path to yours.
+
+After that you can start mining by type ***minerstat*** to your terminal.
+
+
 ## Currently Supported Clients
 CCminer-Tpruvot (Nvidia Multi Miner)
 
