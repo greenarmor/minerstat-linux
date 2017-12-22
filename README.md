@@ -1,6 +1,7 @@
-# minerstat.com - Linux Beta v0.2
+# minerstat.com - Linux Beta v0.3
 
-> Feel free to test!
+> with Hardware Monitor!
+> [STABLE] it can run weeks without downtime!
 
 # Dependencies
 Linux OS with Installed Graphics Drivers
@@ -45,6 +46,15 @@ Claymore-Cryptonote (AMD XMR Miner)
 Ewbf-Equihash (AMD ZEC Miner)
 
 SGMiner (NVIDIA/AMD Multi Algo)
+
+## Functions
+Switch miner from the website
+
+Modify miner settings from the website (pools etc..)
+
+Restart mining
+
+Hardware Monitor (nvidia, amd) (Under testing)
 
 ### Support
 Noticed something?
