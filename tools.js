@@ -139,6 +139,19 @@ main.main();
         
 }
 
+if (command === "REBOOT") {
+
+  var exec = require('child_process').exec;
+
+  var query = exec("systemctl reboot",
+  function (error, stdout, stderr) {
+
+  console.log("System going to reboot now..");
+
+  });
+          
+}
+
 });
     
 },
