@@ -4,6 +4,7 @@
 ![Last](https://img.shields.io/github/last-commit/coinscrow/minerstat-linux.svg)
 
 > [STABLE] it can run weeks without downtime!
+
 > with Hardware Monitor!
 
 # Dependencies
