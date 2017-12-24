@@ -1,8 +1,10 @@
-# minerstat.com - Linux Beta v0.3
+# minerstat.com - Linux Beta 
 
-> with Hardware Monitor!
+![Version](https://img.shields.io/github/release/coinscrow/minerstat-linux.svg)
+![Last](https://img.shields.io/github/last-commit/coinscrow/minerstat-linux.svg)
 
 > [STABLE] it can run weeks without downtime!
+> with Hardware Monitor!
 
 # Dependencies
 Linux OS with Installed Graphics Drivers
