@@ -126,8 +126,6 @@ function (error, stdout, stderr) {
 
 var res = stdout + "" + stderr;
 
-console.log(res);
-
 console.log(colors.magenta("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 console.log(colors.magenta("AUTOUPDATE: DONE"));
 if(global.client.indexOf("Already up-to-date") === 0) {
