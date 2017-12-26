@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
-// MINERSTAT.COM - LINUX CLIENT BETA
+// MINERSTAT.COM - LINUX CLIENT
 
 var colors = require('colors');
 var sleep = require('sleep');
