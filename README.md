@@ -47,6 +47,8 @@ After that you can start mining by type ***minerstat*** to your terminal.
 
 
 ## Currently Supported Clients
+Profit Switch (Between Coins and Algos)
+
 CCminer-Tpruvot (Nvidia Multi Miner)
 
 CCminer-DJM34 (Nvidia XZC Miner)
@@ -71,6 +73,8 @@ Modify miner settings from the website (pools etc..)
 Restart mining
 
 Hardware Monitor (nvidia, amd) (Under testing)
+
+Profit Switch
 
 ### Support
 Noticed something?
