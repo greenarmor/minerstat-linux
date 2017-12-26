@@ -122,7 +122,9 @@ var args = parse(larg);
 const https = require('https');
 var needle = require('needle');
 
-needle.get('https://minerstat.com/control.php?worker='+ global.accesskey +'.' + global.worker + '&miner=' + global.client +'&os=linux&ver=4&cpu=NO', function(error, response) {
+var main = require('./start.js');
+
+needle.get('https://minerstat.com/control.php?worker='+ global.accesskey +'.' + global.worker + '&miner=' + global.client +'&os=linux&ver=4&cpu=NO&algo=' + global.isalgo + '&best=' + global.algo_bestalgo + '&client=' + global.client, function(error, response) {
 var command = response.body + "";
 
 if (command !== "") {
@@ -131,9 +133,76 @@ console.log(colors.red("REMOTE COMMAND: " + command));
 console.log(colors.red("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 }
 
+
+if (global.configtype === "algo") {
+
+  var request = require('request');
+  request.get({
+    url:     'https://minerstat.com/profitswitch_api.php?token='+ global.accesskey +'&worker=' + global.worker,
+    form:    { mes: "kflFDKME" }
+  }, function(error, response, body){
+  
+    var json_string = response.body;  
+
+    if(json_string.indexOf("ok") > -1) {
+
+    var json_parse = JSON.parse(json_string);
+    
+    var algo_status = json_parse.response.status;
+    var algo_bestalgo = json_parse.response.bestalgo;
+    var algo_dualmode = json_parse.response.dualmode;
+    var algo_client = json_parse.response.client;  
+    var algo_bestdual = json_parse.response.bestdual;
+    var algo_revenue = json_parse.response.revenue;
+    var algo_gputype = json_parse.response.gputype;
+    var algo_checkdual = json_parse.response.checkdual;
+    var algo_db = json_parse.response.db;
+    var algo_ccalgo = json_parse.response.ccalgo;
+  
+    console.log(colors.magenta("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
+    console.log(colors.magenta(getDateTime() + " |ALGO| Best Coin Now ["+algo_bestalgo+"]"));
+    console.log(colors.magenta(getDateTime() + " |ALGO| Current Profit [$"+algo_revenue+"]"));
+    console.log(colors.magenta("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
+
+    if (global.algo_checkdual != algo_checkdual) {
+      clearInterval(global.timeout);
+      main.main();
+    }
+
+    if (global.algo_checkdual === "YES") {
+
+      if (global.algo_bestalgo != algo_bestalgo) {
+        clearInterval(global.timeout);
+        main.main();;
+      }
+
+      if (global.algo_bestdual != algo_bestdual) {
+        clearInterval(global.timeout);
+        main.main();
+      }
+
+    } else {
+
+      if (global.algo_bestalgo != algo_bestalgo) {
+        clearInterval(global.timeout);
+        main.main();
+      }
+
+
+    }
+
+
+
+    }
+  
+  });
+
+}
+
+
 if (command === "RESTARTNODE") {
 
-var main = require('./start.js');
+
 clearInterval(global.timeout);
 main.main();
         
