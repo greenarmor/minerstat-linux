@@ -26,7 +26,7 @@ process.on('unhandledRejection', (reason, p) => { });
 
 function header() {
 console.log(colors.cyan('/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*'));
-console.log(colors.cyan('------------------------ v0.4 Linux Beta ---------------------------'));
+console.log(colors.cyan('------------------------ v0.5 Linux Beta ---------------------------'));
 console.log(colors.cyan("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 console.log('');
 let input_text = "minerstAt";
@@ -40,6 +40,9 @@ hour = (hour < 10 ? "0" : "") + hour; min = (min < 10 ? "0" : "") + min; sec = (
 }
 
 module.exports = {
+boot: function () {
+tools.start();  
+},  
 main: function () {
 
 tools.killall();
@@ -157,13 +160,13 @@ writeStream.end();
 
 writeStream.on('finish', function(){
 tools.killall();
-tools.start();
+tools.autoupdate();
 });
 
 } else {
 console.log(global.chunk); 
 tools.killall();
-tools.start();    
+tools.autoupdate(); 
 }
 
 console.log(colors.cyan(getDateTime() + " GPU TYPE: " + global.gputype));

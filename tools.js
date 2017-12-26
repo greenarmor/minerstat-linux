@@ -103,7 +103,7 @@ var larg = "-c sgminer.conf --gpu-reorder --api-listen";
 var parse = require('parse-spawn-args').parse
 var args = parse(larg);
 
-       require("child_process").spawn('clients/'+global.client+'/sgminer', args,  {
+require("child_process").spawn('clients/'+global.client+'/sgminer', args,  {
   cwd: process.cwd(),
   detached: false,
   stdio: "inherit"
@@ -113,11 +113,39 @@ var args = parse(larg);
 },
 
 /////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// AUTO UPDATE /////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+autoupdate: function () {
+
+var exec = require('child_process').exec;
+var main = require('./start.js');
+
+var query = exec("sh git.sh",
+function (error, stdout, stderr) {
+
+var res = stdout + "" + stderr;
+
+console.log(res);
+
+console.log(colors.magenta("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
+console.log(colors.magenta("AUTOUPDATE: DONE"));
+if(global.client.indexOf("Already up-to-date") === -1) {
+console.log(colors.red("NODE RESTART NEEDED! Press Ctrl + C to exit"));
+}
+console.log(colors.magenta("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
+
+main.boot();
+
+});
+
+},
+
+/////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////// REMOTE COMMAND ////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
     
-    remotecommand: function () {
-        
+remotecommand: function () {
         
 const https = require('https');
 var needle = require('needle');
@@ -133,14 +161,13 @@ console.log(colors.red("REMOTE COMMAND: " + command));
 console.log(colors.red("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 }
 
-
 if (global.configtype === "algo") {
 
-  var request = require('request');
-  request.get({
-    url:     'https://minerstat.com/profitswitch_api.php?token='+ global.accesskey +'&worker=' + global.worker,
-    form:    { mes: "kflFDKME" }
-  }, function(error, response, body){
+var request = require('request');
+request.get({
+  url:     'https://minerstat.com/profitswitch_api.php?token='+ global.accesskey +'&worker=' + global.worker,
+  form:    { mes: "kflFDKME" }
+}, function(error, response, body){
   
     var json_string = response.body;  
 
