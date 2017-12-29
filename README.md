@@ -39,6 +39,22 @@ minerstat-start-bg | Same as minerstat-start just in the background, ideal for S
 minerstat-view | View mining output (Only for BG mod)
 ```
 
+# Start with Linux
+
+Enter `crontab-e` (Select nano if needed)
+
+Make a new line on the end of the script
+
+Type `@reboot bash -ic "minerstat-start-bg"`
+
+**That's all!**
+
+You can see mining process by type `minerstat-view-bg` to the terminal.
+
+**Ctrl + A** | **Crtl + D** to safety close the `minerstat-view-bg`.
+
+**Ctrl + C** command quit from the process.
+
 ## Currently Supported Clients
 Profit Switch by Minerstat
 
