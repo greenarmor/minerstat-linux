@@ -27,8 +27,6 @@ echo "alias minerstat-start-bg='cd "$(pwd)"/minerstat-linux; screen -A -m -d -S 
 echo "alias minerstat-console='screen -x minerstat-console;'" >> ~/.bashrc
 echo "alias minerstat-start='cd "$(pwd)"/minerstat-linux; node start;'" >> ~/.bashrc 
 echo "alias minerstat-stop='cd "$(pwd)"/minerstat-linux; node stop;'" >> ~/.bashrc 
-exec bash
-source ~/.bashrc
 
 echo " "
 echo "!!!! INFO !!!!!"
@@ -39,3 +37,5 @@ echo "View console in background mode: minerstat-console"
 echo "Stop mining and minerstat: minerstat-stop"
 echo "!!!! INSTALLATION DONE !!!!!"
 
+exec bash
+source ~/.bashrc
