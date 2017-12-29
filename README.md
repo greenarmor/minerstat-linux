@@ -26,28 +26,21 @@ wget https://raw.githubusercontent.com/coinscrow/minerstat-linux/master/install.
 
 2) After the install script you are ready to use our Linux Client!
 
-> Note 
 
-Make sure after install you type
-
-```
-cd minerstat-linux
-node start
-```
-
-# Setup Alias to Start Mining
+# Commands
 
 ```
-echo "alias minerstat='cd /home/user/minerstat-linux/; node start;'" >> ~/.bashrc && source ~/.bashrc
+***minerstat-start*** - Start mining with console & mining output
+
+***minerstat-stop*** - Stop mining and minerstat
+
+***minerstat-start-bg*** - Same as minerstat-start just in the background, ideal for SSH
+
+***minerstat-view*** - View mining output (Only for BG mod)
 ```
-
-change the /home/user/minerstat-linux path to yours.
-
-After that you can start mining by type ***minerstat*** to your terminal.
-
 
 ## Currently Supported Clients
-Profit Switch (Between Coins and Algos)
+Profit Switch by Minerstat
 
 CCminer-Tpruvot (Nvidia Multi Miner)
 
@@ -74,7 +67,7 @@ Restart mining
 
 Hardware Monitor (nvidia, amd) (Under testing)
 
-Profit Switch
+Profit Switch (Between Coins and Algos)
 
 ### Support
 Noticed something?
