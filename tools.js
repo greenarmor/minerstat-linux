@@ -126,11 +126,9 @@ function (error, stdout, stderr) {
 
 var res = stdout + "" + stderr;
 
-console.log(res);
-
 console.log(colors.magenta("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 console.log(colors.magenta("AUTOUPDATE: DONE"));
-if(global.client.indexOf("Already up-to-date") === -1) {
+if(global.client.indexOf("Already up-to-date") === 0) {
 console.log(colors.red("NODE RESTART NEEDED! Press Ctrl + C to exit"));
 }
 console.log(colors.magenta("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
