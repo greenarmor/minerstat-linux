@@ -30,13 +30,13 @@ wget https://raw.githubusercontent.com/coinscrow/minerstat-linux/master/install.
 # Commands
 
 ```
-***minerstat-start*** - Start mining with console & mining output
+minerstat-start | Start mining with console & mining output
 
-***minerstat-stop*** - Stop mining and minerstat
+minerstat-stop | Stop mining and minerstat
 
-***minerstat-start-bg*** - Same as minerstat-start just in the background, ideal for SSH
+minerstat-start-bg | Same as minerstat-start just in the background, ideal for SSH
 
-***minerstat-view*** - View mining output (Only for BG mod)
+minerstat-view | View mining output (Only for BG mod)
 ```
 
 ## Currently Supported Clients
