@@ -23,10 +23,10 @@ global.path = __dirname;" >> config.js
 
 chmod -R 777 *
 
-echo "alias minerstat-start-bg='cd "$(pwd)"/minerstat-linux; screen -A -m -d -S minerstat-console node start;'" >> ~/.bashrc 
+echo "alias minerstat-start-bg='cd "$(pwd)"/; screen -A -m -d -S minerstat-console node start;'" >> ~/.bashrc 
 echo "alias minerstat-console='screen -x minerstat-console;'" >> ~/.bashrc
-echo "alias minerstat-start='cd "$(pwd)"/minerstat-linux; node start;'" >> ~/.bashrc 
-echo "alias minerstat-stop='cd "$(pwd)"/minerstat-linux; node stop;'" >> ~/.bashrc 
+echo "alias minerstat-start='cd "$(pwd)"/; node start;'" >> ~/.bashrc 
+echo "alias minerstat-stop='cd "$(pwd)"/; node stop;'" >> ~/.bashrc 
 
 echo " "
 echo "!!!! INFO !!!!!"
