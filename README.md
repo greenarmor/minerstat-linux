@@ -45,13 +45,16 @@ Enter `crontab-e` (Select nano if needed)
 
 Make a new line on the end of the script
 
-Type `@reboot bash -ic "minerstat-start-bg"`
+Type `@reboot /bin/sleep 30s; bash -ic “minerstat-start-bg”`
+
+**Ctrl + O** to save
+after **Ctrl + C** to quit
 
 **That's all!**
 
-You can see mining process by type `minerstat-view-bg` to the terminal.
+You can see mining process by type `minerstat-console` to the terminal.
 
-**Ctrl + A** | **Crtl + D** to safety close the `minerstat-view-bg`.
+**Ctrl + A** | **Crtl + D** to safety close the `minerstat-console`.
 
 **Ctrl + C** command quit from the process.
 
