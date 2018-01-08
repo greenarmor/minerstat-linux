@@ -45,7 +45,7 @@ Enter `crontab-e` (Select nano if needed)
 
 Make a new line on the end of the script
 
-Type `@reboot /bin/sleep 30s; bash -ic “minerstat-start-bg”`
+Type `@reboot /bin/sleep 30s; bash -ic "minerstat-start-bg"`
 
 **Ctrl + O** to save
 after **Ctrl + C** to quit
