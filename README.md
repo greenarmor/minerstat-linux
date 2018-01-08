@@ -36,7 +36,7 @@ minerstat-stop | Stop mining and minerstat
 
 minerstat-start-bg | Same as minerstat-start just in the background, ideal for SSH
 
-minerstat-view | View mining output (Only for BG mod)
+minerstat-console | View mining output (Only for BG mod)
 ```
 
 # Start with Linux
