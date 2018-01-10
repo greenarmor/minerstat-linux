@@ -68,7 +68,7 @@ var exec = require('child_process').exec;
 var gpunum;
 var hwg = []; var hwf = [];
 
-gpunum = exec("nvidia-smi --query-gpu=count --format=csv,noheader",
+gpunum = exec("nvidia-smi --query-gpu=count --format=csv,noheader | tail -n1",
 function (error, stdout, stderr) {
 var response = stdout;
 
@@ -78,12 +78,12 @@ lstart ++;
 var temp = 0; 
 var fan = 0;
 
-var q1 = exec("nvidia-smi -i "+lstart+" --query-gpu=temperature.gpu --format=csv,noheader", 
+var q1 = exec("nvidia-smi -i "+lstart+" --query-gpu=temperature.gpu --format=csv,noheader | tail -n1", 
 function (error, stdout, stderr) { 
 
 temp = stdout;
 
-var q2 = exec("nvidia-smi -i "+lstart+" --query-gpu=fan.speed --format=csv,noheader", 
+var q2 = exec("nvidia-smi -i "+lstart+" --query-gpu=fan.speed --format=csv,noheader | tail -n1", 
 function (error, stdout, stderr) { 
 
 fan = stdout; 
