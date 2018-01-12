@@ -184,12 +184,14 @@ console.log("*** Hardware monitor is running in the background.. ***");
 (function() {
 global.timeout = setInterval(function() {
 
-
-
 global.sync_num ++;
 tools.remotecommand();
 tools.fetch();
 
+// Hardware Monitor
+if (global.gputype === "nvidia") { monitor.HWnvidia();  }
+if (global.gputype === "amd") { monitor.HWamd();  }  
+  
 if (global.sync_num > 1) { //SKIP THE FIRST SYNC
 if (global.client !== "ethminer") { //SKIP ETHMINER BECAUSE INTEGRATED
       
@@ -197,11 +199,6 @@ var sync = global.sync;
 var res_data = global.res_data;
 
 if(sync.toString() === "true"){ // IS HASHING?
-
-// Hardware Monitor
-
-if (global.gputype === "nvidia") { monitor.HWnvidia();  }
-if (global.gputype === "amd") { monitor.HWamd();  }
 
 // SEND LOG TO SERVER
 
