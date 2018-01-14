@@ -26,7 +26,7 @@ child = exec("nvidia-smi -L",
         }
 });
 
-child = exec("bin/amdmeminfo",
+child = exec(global.path + "/bin/amdcovc",
      function (error, stdout, stderr) {
       var response = stderr;
 
@@ -48,7 +48,7 @@ HWamd: function () {
 
   var exec = require('child_process').exec;
 
-  var query = exec("nvidia-smi --query-gpu=count --format=csv,noheader | tail -n1",
+  var query = exec(global.path + "/bin/amdcovc",
   function (error, stdout, stderr) {
 
   isfinished(stdout,stderr,"amd");
