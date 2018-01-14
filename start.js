@@ -189,10 +189,6 @@ global.sync_num ++;
 tools.remotecommand();
 tools.fetch();
 
-// Hardware Monitor
-if (global.gputype === "nvidia") { monitor.HWnvidia();  }
-if (global.gputype === "amd") { monitor.HWamd();  }  
-  
 if (global.sync_num > 1) { //SKIP THE FIRST SYNC
 if (global.client !== "ethminer") { //SKIP ETHMINER BECAUSE INTEGRATED
       
@@ -223,6 +219,15 @@ console.log(colors.red("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 }
 
 }, 30000);
+  
+// Hardware Monitor
+global.hwmonitor = setInterval(function() {
+  
+if (global.gputype === "nvidia") { monitor.HWnvidia();  }
+if (global.gputype === "amd") { monitor.HWamd();  }    
+  
+}, 20000);
+  
 })();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
