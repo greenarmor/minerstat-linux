@@ -132,7 +132,24 @@ echo "Stop mining and minerstat: minerstat-stop"
 echo "!!!! INSTALLATION DONE !!!!!"
 echo ""
 
-if [ DRIVER = "yes" ]; then
+echo -n "Start Minerstat & Mining on boot (with the system start) (y/n)? "
+read onboots
+if echo "$onboots" | grep -iq "^y" ;then
+    ONBOOT="yes"
+else
+    ONBOOT="no"
+fi
+
+if [ $ONBOOT = "yes" ]; then
+crontab -l | { cat; echo "@reboot /bin/sleep 30s; bash -ic 'minerstat-start-bg'"; } | crontab -
+echo "----------------------------------------"
+echo "Minerstat going to start on system boot."
+echo "You can montior your mining process with minerstat-console command in the terminal."
+echo "----------------------------------------"
+echo ""
+fi
+
+if [ $DRIVER = "yes" ]; then
 
 echo "-------- WARNING --------"
 echo "You need to reboot your computer to apply graphics driver changes."
