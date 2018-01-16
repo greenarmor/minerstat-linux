@@ -1,18 +1,19 @@
 # minerstat.com - Linux Beta 
 
 ![Version](https://img.shields.io/github/release/coinscrow/minerstat-linux.svg)
-![Last](https://img.shields.io/github/last-commit/coinscrow/minerstat-linux.svg)
+![Latest](https://img.shields.io/github/last-commit/coinscrow/minerstat-linux.svg)
 
 > [STABLE] it can run weeks without downtime!
 
 > with Hardware Monitor!
 
 # Dependencies
-Linux OS with Installed Graphics Drivers
+- Linux Ubuntu / lUbuntu 16.04.3 LTS |RECOMMENDED|
+- Linux Ubuntu / lUbuntu 17.10.1 (NOT TESTED BY US, BUT SHOULD WORK)
 
-# Basic
+# First Steps
 
-1) Register a new account on minerstat.com
+1) Register a new account on https://minerstat.com
 2) Create a new worker (Node, Linux , AMD/Nvidia)
 3) Mofify your configs in Config Editor -> Save
 
@@ -23,6 +24,7 @@ Linux OS with Installed Graphics Drivers
 ```
 wget https://raw.githubusercontent.com/coinscrow/minerstat-linux/master/install.sh; chmod 777 install.sh; sh install.sh
 ```
+* Make sure you give correct login token and worker name to the install script (!case sensitive!).
 
 2) After the install script you are ready to use our Linux Client!
 
@@ -39,31 +41,24 @@ minerstat-start-bg | Same as minerstat-start just in the background, ideal for S
 minerstat-console | View mining output (Only for BG mod)
 ```
 
-# Start with Linux
-
-Enter `crontab-e` (Select nano if needed)
-
-Make a new line on the end of the script
-
-Type `@reboot /bin/sleep 30s; bash -ic "minerstat-start-bg"`
-
-**Ctrl + O** to save
-after **Ctrl + C** to quit
-
-**That's all!**
+# Informations
 
 You can see mining process by type `minerstat-console` to the terminal.
 
 **Ctrl + A** | **Crtl + D** to safety close the `minerstat-console`.
 
-**Ctrl + C** command quit from the process.
+**Ctrl + C** command quit from the process / close minerstat.
 
 ## Currently Supported Clients
 Profit Switch by Minerstat
 
 CCminer-Tpruvot (Nvidia Multi Miner)
 
+CCminer-Alexis (Nvidia - better Skein algo)
+
 CCminer-DJM34 (Nvidia XZC Miner)
+
+CCminer-Krnlx (Nvidia - Better Xevan algo)
 
 Ethminer (Nvidia/AMD EthHash Miner)
 
