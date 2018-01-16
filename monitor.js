@@ -63,6 +63,7 @@ HWamd: function () {
 HWnvidia: function () {
 
 var lstart = -1;
+var response_start = -1;
 
 var exec = require('child_process').exec;
 var gpunum;
@@ -91,8 +92,10 @@ fan = stdout;
 // ADD DATA TO ARRAY
 hwg.push(temp); 
 hwf.push(fan); 
+  
+response_start ++;  
  
-if (lstart == (response - 1)) { isfinished(hwg,hwf,"nvidia"); }
+if (response_start == (response - 1)) { isfinished(hwg,hwf,"nvidia"); }
 
 }); });
 
