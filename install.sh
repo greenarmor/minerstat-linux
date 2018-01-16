@@ -89,7 +89,7 @@ if [ $GPUTYPE = "nvidia" ]; then
 sudo apt-get install nvidia-cuda-toolkit -y
 sudo update-grub
 sudo rm /var/crash/*
-sudo nvidia-xconfig -s -a --force-generate --allow-empty-initial-configuration --cool-bits=28 --registry-dwords="PerfLevelSrc=0x2222" --no-sli --connected-monitor="DFP-0"
+sudo nvidia-xconfig -s -a --allow-empty-initial-configuration --cool-bits=28 --registry-dwords="PerfLevelSrc=0x2222" --no-sli --connected-monitor="DFP-0"
 fi
 
 if [ $GPUTYPE = "amd" ]; then
