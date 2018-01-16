@@ -59,7 +59,7 @@ else
     GPUTYPE="amd"
 fi
 
-echo "Your selected gpu type: $answer"
+echo "Your selected gpu type: $GPUTYPE"
 echo ""
 
 echo -n "Install Graphics Drivers (y/n)? "
@@ -70,7 +70,7 @@ else
     DRIVER="no"
 fi
 
-echo "Install Graphics Drivers? $answer"
+echo "Install Graphics Drivers? $DRIVER"
 echo ""
 
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
@@ -83,13 +83,17 @@ cd minerstat-linux
 npm install colors sleep pump request express sphp progress ascii-text-generator fkill needle parse-spawn-args
 
 
-if [ DRIVER = "yes" ]; then
+if [ $DRIVER = "yes" ]; then
   
-if [ GPUTYPE = "nvidia" ]; then
+if [ $GPUTYPE = "nvidia" ]; then
 sudo apt-get install nvidia-cuda-toolkit -y
 sudo update-grub
 sudo rm /var/crash/*
 sudo nvidia-xconfig -s -a --force-generate --allow-empty-initial-configuration --cool-bits=28 --registry-dwords="PerfLevelSrc=0x2222" --no-sli --connected-monitor="DFP-0"
+fi
+
+if [ $GPUTYPE = "amd" ]; then
+echo "AMD DRIVER INSTALL SOON"
 fi
   
 else
