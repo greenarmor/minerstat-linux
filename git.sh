@@ -4,4 +4,4 @@ git config --global user.name "test"
 git pull
 git add * -f
 git commit -a -m "AutoUpdate"
-git merge
+git pull
