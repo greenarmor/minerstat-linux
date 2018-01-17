@@ -100,6 +100,9 @@ cd amdgpu-pro-17.40-483984
 chmod 777 amdgpu-pro-install
 ./amdgpu-pro-install -y --opencl=rocm
 echo "AMD Driver Install script done.."
+cd ..
+rm -rf amdgpu-pro-17.40-483984
+echo "AMD Driver folder has been removed"
 fi
   
 else
