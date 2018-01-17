@@ -1,6 +1,22 @@
 VERSION HISTORY
 
 
+v11.2
+---------------------------------------------------------------------
+
+- added workaround for bug in Adrenalin drivers (failed fan/temperature management).
+- changed default settings for Fiji chips.
+
+
+
+v11.1
+---------------------------------------------------------------------
+
+- fixed issue with stale shares, now effective hashrate must be higher.
+- a few minor improvements.
+
+
+
 v11.0
 ---------------------------------------------------------------------
 
