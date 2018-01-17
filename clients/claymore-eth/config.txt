@@ -1,12 +1,13 @@
+# WARNING! Remove "#" characters to enable lines, with "#" they are disabled and will be ignored by miner! Check README for details.
+# WARNING! Miner loads options from this file only if there are not any options in the command line!
 
--eworker testpc
--epool eu1.ethermine.org:4444
--ewal 0xA204eF1E3E192C78F12f1fFac60F29317C07B495
--epsw x
--dpool dcr.suprnova.cc:3252
--dcoin dcr
--dwal coinscrow.1
--dpsw x
--mode 1
--dcri 4
-
+#-epool us1.ethpool.org:3333
+#-ewal 0xD69af2A796A737A103F12d2f0BCC563a13900E6F
+#-epsw x
+#-dpool stratum+tcp://yiimp.ccminer.org:4252
+#-dwal DsUt9QagrYLvSkJHXCvhfiZHKafVtzd7Sq4
+#-dpsw x
+#-esm 1
+#-mode 0
+#-tt 70
+#-asm 0
