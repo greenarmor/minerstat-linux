@@ -51,7 +51,7 @@ HWamd: function () {
   var query = exec(global.path + "/bin/amdcovc",
   function (error, stdout, stderr) {
 
-  isfinished(stdout,stderr,"amd");
+  isfinished(stdout,"amd");
 
   });
 
