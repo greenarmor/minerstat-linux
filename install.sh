@@ -93,7 +93,13 @@ sudo nvidia-xconfig -s -a --allow-empty-initial-configuration --cool-bits=28 --r
 fi
 
 if [ $GPUTYPE = "amd" ]; then
-echo "AMD DRIVER INSTALL SOON"
+echo "Installing Graphics Drivers for AMD.."
+wget https://media.githubusercontent.com/media/coinscrow/cloud/master/amd-blockchain-linux.tar.xz
+tar -xvf amd-blockchain-linux.tar.xz
+cd amdgpu-pro-17.40-483984
+chmod 777 amdgpu-pro-install
+./amdgpu-pro-install -y --opencl=rocm
+echo "AMD Driver Install script done.."
 fi
   
 else
