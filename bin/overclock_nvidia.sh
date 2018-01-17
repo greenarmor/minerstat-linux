@@ -24,7 +24,8 @@ MEMORYOFFSET=$4
 COREOFFSET=$5
 
 nvidia-smi -i $GPUID -pl $POWERLIMITINWATT
-nvidia-settings -c :0 -a '[gpu:'"$GPUID"']/GPUFanControlState=1' -a '[fan:0]/GPUTargetFanSpeed='"$FANSPEED"'';
+#nvidia-settings -c :0 -a '[gpu:'"$GPUID"']/GPUFanControlState=1' -a '[fan:0]/GPUTargetFanSpeed='"$FANSPEED"'';
+nvidia-settings -c :0 -a 'GPUFanControlState=1' -a 'GPUTargetFanSpeed="$FANSPEED"'
 nvidia-settings -c :0 -a '[gpu:'"$GPUID"']/GPUMemoryTransferRateOffset[3]='"$MEMORYOFFSET"''
 nvidia-settings -c :0 -a '[gpu:'"$GPUID"']/GPUGraphicsClockOffset[3]='"$COREOFFSET"''
 
