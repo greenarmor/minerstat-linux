@@ -57,52 +57,6 @@ HWamd: function () {
 
 },
 
-////////////////////////////////////////////////////////////////////////////////////////////
-// GPU NAME
-
-HWnames: function (hwgtype) {
-
-
-
-var lstart = -1;
-var response_start = -1;
-
-var exec = require('child_process').exec;
-var gpunum;
-var hwn = []; 
-
-if (hwgtype == "nvidia") {
-
-gpunum = exec("nvidia-smi --query-gpu=count --format=csv,noheader | tail -n1",
-function (error, stdout, stderr) {
-var response = stdout;
-
-while (lstart != (response - 1)) {
-lstart ++;  
-var names = ""; 
-
-var q1 = exec("nvidia-smi -i "+lstart+" --query-gpu=name --format=csv,noheader | tail -n1", 
-function (error, stdout, stderr) { 
-
-names = stdout;
-response_start ++;  
-hwn.push(names);  
-
-if (response_start == (response - 1)) { isfinishedn(hwn,"nvidia"); }
-
-});
-  
-} // END WHILE
-}); // END FETCH
-
-} // END HWGTYPE - NVIDIA
-
-if (hwgtype == "amd") {
-
-
-}
-
-},
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // NVIDIA-SMI (for GPU Temp/Fan/ ... monitoring)
@@ -123,67 +77,45 @@ var response = stdout;
 while (lstart != (response - 1)) {
 
 lstart ++;  
-var temp = 0; 
-var fan = 0;
+var datar = ""; 
 
-var q1 = exec("nvidia-smi -i "+lstart+" --query-gpu=temperature.gpu --format=csv,noheader | tail -n1", 
+var q2 = exec("nvidia-smi -i "+lstart+" --query-gpu=name,temperature.gpu,fan.speed --format=csv,noheader | tail -n1", 
 function (error, stdout, stderr) { 
 
-temp = stdout;
-
-var q2 = exec("nvidia-smi -i "+lstart+" --query-gpu=fan.speed --format=csv,noheader | tail -n1", 
-function (error, stdout, stderr) { 
-
-fan = stdout; 
+datar = stdout; 
   
 // ADD DATA TO ARRAY
-hwg.push(temp); 
-hwf.push(fan); 
+hwg.push(datar);  
   
 response_start ++;  
  
-if (response_start == (response - 1)) { isfinished(hwg,hwf,"nvidia"); }
+if (response_start == (response - 1)) { isfinished(hwg,"nvidia"); }
 
-}); });
+}); 
 
 } // END WHILE
 }); // END FETCH
 } // END HWNvidia
 } // END MODULE.EXPORT
 
-function isfinished(hwg,hwf,typ) {
+function isfinished(hwdatar,typ) {
 
 if (typ === "nvidia") {
 // ARRAY to JSON
-  var hwg = JSON.stringify(hwg);
-  var hwf = JSON.stringify(hwf);
+  var hwdatas = JSON.stringify(hwdatar);
+} else {
+  var hwdatas = hwdatar;
 }
 
 // DUMP LOG TO THE CONSOLE
-console.log("["+typ+"] Hardware Monitor: " + hwg, hwf);
+console.log("["+typ+"] Hardware Monitor: " + hwdatas);
 
 
 // SEND DATA TO THE SERVER
 
 var request = require('request');
 request.post({
-url: 'https://minerstat.com/gethw.php?token='+ global.accesskey +'&worker='+ global.worker+'&fan='+hwf+'&gpu='+hwg, form: { mes: typ }
-}, function(error, response, body){ });
-
-} // END isfinished();
-
-
-function isfinishedn(hwn,typ) {
-
-if (typ === "nvidia") {
-  var hwn = JSON.stringify(hwn);
-}
-
-//console.log(hwn);
-
-var request = require('request');
-request.post({
-url: 'https://minerstat.com/gethw.php?token='+ global.accesskey +'&worker='+ global.worker+'&names='+hwn, form: { mes: typ }
+url: 'https://minerstat.com/gethw.php?token='+ global.accesskey +'&worker='+ global.worker+'&datas='+hwdatas, form: { mes: typ }
 }, function(error, response, body){ });
 
 } // END isfinished();
