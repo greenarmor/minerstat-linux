@@ -59,7 +59,7 @@ wget https://media.githubusercontent.com/media/coinscrow/cloud/master/amd-blockc
 tar -xvf amd-blockchain-linux.tar.xz
 cd amdgpu-pro-17.40-483984
 chmod 777 amdgpu-pro-install
-./amdgpu-pro-install -y --opencl=rocm
+./amdgpu-pro-install -y
 echo "AMD Driver Install script done.."
 cd ..
 rm -rf amdgpu-pro-17.40-483984
