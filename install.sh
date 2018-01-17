@@ -63,7 +63,8 @@ chmod 777 amdgpu-pro-install
 echo "AMD Driver Install script done.."
 cd ..
 rm -rf amdgpu-pro-17.40-483984
-echo "AMD Driver folder has been removed"
+rm amd-blockchain-linux.tar.xz
+echo "AMD Driver package & folder has been removed"
 fi
   
 else
