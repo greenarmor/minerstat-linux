@@ -223,8 +223,8 @@ console.log(colors.red("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 // Hardware Monitor
 global.hwmonitor = setInterval(function() {
   
-if (global.gputype === "nvidia") { monitor.HWnvidia();  }
-if (global.gputype === "amd") { monitor.HWamd();  }    
+if (global.gputype === "nvidia") { monitor.HWnvidia(); monitor.HWnames("nvidia");  }
+if (global.gputype === "amd") { monitor.HWamd(); monitor.HWnames("amd");  }  
   
 }, 20000);
   
