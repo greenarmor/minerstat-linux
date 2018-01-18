@@ -26,7 +26,7 @@ process.on('unhandledRejection', (reason, p) => { });
 
 function header() {
 console.log(colors.cyan('/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*'));
-console.log(colors.cyan('------------------------ v0.5 Linux Beta ---------------------------'));
+console.log(colors.cyan('------------------------ v0.6 Linux Beta ---------------------------'));
 console.log(colors.cyan("*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/"));
 console.log('');
 let input_text = "minerstAt";
